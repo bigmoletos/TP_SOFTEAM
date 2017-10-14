@@ -1,0 +1,137 @@
+
+TD1
+
+ 
+
+Exercice1
+
+1.        
+
+select h.codeh, typeh, c.nom, ville, profession
+
+from (habitation h join location l on l.codeh = h.codeh) join client c on c.nom = l.nom
+
+ 
+
+2.
+
+select h.codeh, typeh, c.nom, ville, profession
+
+from (habitation h left join location l on l.codeh = h.codeh) left join client c on c.nom = l.nom
+
+ 
+
+3.        
+
+select ville, typeh, min(loyerm) as MIN, max(loyerm) as MAX, avg(loyerm) as MOYEN
+
+from habitation
+
+group by ville, typeh
+
+ 
+
+4.        
+
+select typeh, count(*) as nombre
+
+from habitation h join location l on h.codeh = l.codeh
+
+group by typeh
+
+ 
+
+5.        
+
+select typeh, count(*) as nombre
+
+from habitation h join location l on h.codeh = l.codeh
+
+group by typeh
+
+having count(*) >= 3
+
+ 
+
+6.        
+
+select h.codeh, typeh, isnull(sum(NombMois), 0) as MOIS_TOTALES
+
+from habitation h left join location l on l.codeh = h.codeh
+
+group by h.codeh, typeh
+
+ 
+
+7.        
+
+select l.nom, sum(h.LoyerM*Nombmois) as totalDep
+
+from location l join habitation h on l.codeh = h.codeh
+
+group by l.nom
+
+ 
+
+8.        
+
+select nom from client
+
+where nom not in (select nom from location)
+
+ 
+
+9
+
+select nom from location l
+
+where exists (select * from habitation where codeh = l.codeh and typeh = 'TYPE1')
+
+intersect
+
+select nom from location l
+
+where exists (select * from habitation where codeh = l.codeh and typeh = 'TYPE3')
+
+ 
+
+select nom from location l
+
+where exists (select * from habitation where codeh = l.codeh and typeh = 'TYPE1')
+
+and
+
+exists (select *  from location l2 where l2.nom = l.nom and
+
+            exists (select * from habitation where codeh = l2.codeh and typeh = 'TYPE3'))
+
+ 
+
+ 
+
+10.      
+
+select nom from location l 
+
+where not exists (select *from location l2 where l.nom = l2.nom and
+
+            exists (select *from habitation h where l2.codeh = h.codeh and typeh <> 'VILLA'))
+
+ 
+
+ 
+
+11.      
+
+select l.nom, sum(h.LoyerM*Nombmois) as totalDep
+
+from location l join habitation h on l.codeh = h.codeh
+
+group by l.nom
+
+having sum(h.LoyerM*Nombmois) >= all (select sum(h.LoyerM*Nombmois)
+
+from location l join habitation h on l.codeh = h.codeh
+
+group by l.nom)
+

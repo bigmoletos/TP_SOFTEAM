@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+    "settings": {
+        "xdebug": {
+        	 "path_mapping": {
+                "/var/www/html/universite/" : "/var/www/html/universite/",
+             "max_depth":5
+            },
+             "url": "http://localhost/universite/index.php",
+             "super_globals": true,
+             "close_on_stop": true
+        }
+    }
+}

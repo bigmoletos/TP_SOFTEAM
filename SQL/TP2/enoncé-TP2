@@ -1,0 +1,39 @@
+POEC PHP 2017 - Marseille - Groupe 2
+TP2
+Achref EL Mouelhi
+• Se connecter `a WINDOWS
+• Démarrer Console MYSQL
+• Télécharger le fichier script location.txt de la page http ://www.lsis.org/elmouelhia/teaching.html
+• Dans la console, écrire source chemindefichieir/script location.sql
+• Vérifier bien que tout le script a été exécuté avec succ`es.
+
+
+
+Exercice 1 :
+
+En considérant la base de données Location
+CLIENT(Nom, VilleResid, Profession)
+HABITATION(Codeh, Typeh, Adresse, Ville, LoyerM)
+LOCATION(Codeh, Nom, NombMois)
+formuler les requêtes SQL suivantes :
+1. Pour chaque habitation, afficher son code, son type, la ville o`u elle se trouve les noms des
+locataires et leur profession.
+2. La même que la requête précédente mais afficher aussi les habitations qui n’ont jamais été
+prises en location
+3. Déterminer le loyer minimum, maximum et moyen des habitations pour chaque type et chaque
+ville (dans une seule requête)
+4. Pour chaque type d’habitation, déterminer le nombre d’habitations de ce type qui ont été
+prises en location.
+5. Même que la requête précédente, mais montrer seulement les types dont au moins 3 habitations
+(pas forcement différentes) ont été louées.
+6. Pour chaque habitation déterminer le nombre total des mois qui a été louée. Afficher code
+et type. Facultatif : pour celles qui n’ont été jamais louées ; afficher la valeur 0 (utiliser la
+fonction isnull(valeurCalculé, 0)).
+7. Pour chaque client calculer ses frais totales de loyer.
+8. Trouver les clients qui n’ont jamais loué aucune habitation.
+9. Trouver les clients qui ont loué `a la fois des appartements de type 1 et de type 3, c’est-`a dire
+qui ont loué (au moins) un appartement de type 1 et (au moins) un appartement de type 3.
+(Utiliser exists).
+10. Trouver les clients qui n’ont loué que des villas (toutes les habitations qui ont louées sont des
+villas). Le résultat ne doit pas afficher les clients qui n’ont pas loué aucune habitation.
+11. Trouver les clients qui ont dépensé le maximum en loyer (afficher Nom de client et montant).

@@ -40,8 +40,9 @@ function connexionDB() {
         $connexion = new PDO($driver, $utilisateur, $motdepasse);
         $connexion->setattribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
+        
         $db=$connexion;
-        echo "connection réussie";
+        echo "connexion à la base de donnée:'  $bdd ' de mysql réussie";
         return $db; //en dehors de la fonction il faudra faire un set $db poour l'appeler
     } catch (Exception $e) {
         echo "La connection à votre base est impossible, veuillez verifier vos parametres", $e->getMessage();

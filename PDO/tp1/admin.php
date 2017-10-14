@@ -45,39 +45,51 @@ function afficheNewsDel(){
 // avec save() ou la modifie (UPDATE) avec update()
 function afficheNewsModif($manager){
  //!isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
-   $news=$manager->Save(News $news); 
+//   $modif=$manager->Save(News $news); 
     
 }
+
 //fonction pour afficher une news en version courte
 
-//fonction pour afficher l'auteur
-  function auteur($manager){
-         !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
-          $news=$manager->Load($id);
-          $auteur= $news->getAuteur();
-          //  var_dump($auteur);
-          // echo $auteur;
-          return $auteur;
- }
- //fonction pour afficher le titre
-  function titre($manager){
-         !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
-          $news=$manager->Load($id);
-          $titre= $news->getTitre();
-          //  var_dump($auteur);
-          // echo $auteur;
-          return $titre;
- }
-  //fonction pour afficher le contenu
-  function contenu($manager){
-         !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
-          $news=$manager->Load($id);
-          $contenu= $news->getContenu();
-          //  var_dump($auteur);
-          // echo $auteur;
-          return $contenu;
- }
- echo '<br />'.auteur($manager);
+        //fonction pour afficher l'auteur
+          function auteur($manager){
+                 !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
+                  $news=$manager->Load($id);
+                  $auteur= $news->getAuteur();
+                  //  var_dump($auteur);
+                  // echo $auteur;
+                  return $auteur;
+         }
+         //fonction pour afficher le titre
+          function titre($manager){
+                 !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
+                  $news=$manager->Load($id);
+                  $titre= $news->getTitre();
+                  //  var_dump($auteur);
+                  // echo $auteur;
+                  return $titre;
+         }
+          //fonction pour afficher le contenu
+          function contenu($manager){
+                 !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
+                  $news=$manager->Load($id);
+                  $contenu= $news->getContenu();
+                  //  var_dump($auteur);
+                  // echo $auteur;
+                  return $contenu;
+         }
+
+          //fonction pour afficher le lien de l'image
+          function image($manager){
+                 !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
+                  $news=$manager->Load($id);
+                  $image= $news->getImage();
+                  //  var_dump($auteur);
+                  // echo $auteur;
+                  return $image;
+         }
+ 
+ //echo '<br />'.auteur($manager);
 //var_dump($auteur);
 //var_dump($id);
 
@@ -136,16 +148,19 @@ correspondant à l'id de la news selectionnée par le bouton modifier-->
        maxlength="20" size="30">
 <br />
 <label for="contenu">votre contenu</label>
-<textarea name="contenu" id="contenu"   placeholder="ex: Les nymphes..........." >
+<textarea name="contenu" id="contenu"  rows="8" cols="100" placeholder="ex: Les nymphes..........." >
    <?php echo isset($_GET['change']) && $_GET['change']=='modifier' ? contenu($manager): "";//ternaire le champ se remplit si change=modifer et si modifier est set ?>
 </textarea>
-<input type="submit" name="modifierNews" id="modifierNews" value="valider modif">
+
 
 <br />
 <label for="image">image à integrer</label>
 <input type="text" name="image" id="image" placeholder="C:\Users\franck\programmation\sauve_fichiers_serveur_wamp\www\TP_SOFTEAM\softeam\TP\PDO\tp1\image\image1.jpg" 
        value="<?php echo isset($_GET['change']) && $_GET['change']=='modifier' ? image($manager): ""; ?>" 
-       maxlength="200" size="70">
+       maxlength="200" size="110">
+<br />
+<input type="submit" name="modifierNews" id="modifierNews" value="valider modif" >
+<img src="<?php echo image($manager)?>" class="img" />
 </form>
         
 <a href="index.php?id=0&change=lire" >lien vers index</a>        

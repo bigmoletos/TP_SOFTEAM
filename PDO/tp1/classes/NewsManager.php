@@ -117,6 +117,8 @@ class NewsManager {
     
 //version david
     public function load($id) {
+         //pour mettre les date en francais dans la requete
+        //  $requete->query('SET lc_time_names = \'fr_FR\'');
         $requete = $this->db->prepare('SELECT id, auteur, titre, contenu, date_ajout, date_modif, image FROM news WHERE id = :id');
         $requete->bindValue(':id', (int) $id, PDO::PARAM_INT);
         $requete->execute();
@@ -136,6 +138,8 @@ class NewsManager {
     // méthode update() pour pouvoir modifier des enregistrements en base de données
     //(update) à faire sur les 3 champs, inutile de verifier
     protected function update(News $news) {
+         //pour mettre les date en francais dans la requete
+        //  $requete->query('SET lc_time_names = \'fr_FR\'');
         $requete = $this->db->prepare('UPDATE news SET'
                 . ' auteur = :auteur, titre = :titre, contenu = :contenu, date_modif = NOW(), image = :image '
                 . 'WHERE id = :id');
@@ -159,7 +163,7 @@ class NewsManager {
     //l’ajouter, sinon la modifier avec update()
      public function save(News $news) {
         if ($news->isValid()) {
-            $news->isNew() ? $this->add($news) : $this->update($news);
+            $news->isNew() ? $this->addNews($news) : $this->update($news);
         } else {
             throw new Exception('La news doit être valide pour être enregistrée');
         }
@@ -171,6 +175,8 @@ class NewsManager {
    
     //methode getlist
      public function getList($debut = null, $limite = null) {
+          //pour mettre les date en francais dans la requete
+        //  $requete->query('SET lc_time_names = \'fr_FR\'');
         $sql = 'SELECT id, auteur, titre, contenu, date_ajout, date_modif, image FROM news ORDER BY id DESC';
 
         // On vérifie l'intégrité des paramètres fournis.

@@ -1,0 +1,45 @@
+POEC PHP 2017 - Marseille - Groupe 2
+TP1
+Achref EL Mouelhi
+
+Exercice 1 :
+
+CLASSE (num classe, nom classe)
+ETUDIANT (num et, nom et, prenom et, date naiss et, id classe)
+Clé étrangère : id classe faisant références à CLASSE(num classe)
+MATIERES (num mat, nom mat)
+OBTENIR (num et, num mat, note, apreciation)
+Clé étrangère : num et faisant références à ETUDIANT(num et)
+Clé etrangère : num mat faisant références à MATIERES(num mat)
+COMPRENDRE (num classe, num mat)
+Clé étrangère : num classe faisant références à CLASSE(num classe)
+Clé etrangère : num mat faisant références à MATIERES(num mat)
+1. Créer les tables ci-dessus en indiquant chaque fois les clés-primaires et étrangères
+2. Remplir les tables avec les valeurs de votre choix
+
+Exercice 2 :
+
+En vous aidant du modèle relationnel ci-dessus, vous écrirez les requêtes suivantes :
+1. Afficher le nom et prénom des étudiants par ordre alphabétique.
+2. Afficher le nombre de classes.
+3. Afficher la liste des étudiants qui sont en BTS SIO A ou B.
+4. Afficher les classes qui ont un effectifs supérieur à 24 étudiants.
+5. Afficher les étudiants qui sont nés entre le 24/12/1987 et le 24/12/1990.
+6. Afficher les notes de l’étudiant Basile TRADER.
+7. Afficher pour la classe des BTS IG les matières pour lesquelles la moyenne est inférieure à
+10/20.
+8. Afficher la moyenne de la classe BTS SIO A.
+9. Afficher la moyenne de chaque étudiant en BTS SIO B.
+10. Afficher la liste des étudiants qui ont eu une moyenne inférieur à la moyenne de la classe en
+BTS IG.
+11. Afficher la liste des étudiants qui ne sont pas références dans une classe.
+12. Vérifier si toutes les classes sont remplies.
+13. Nous devons supprimer la classe des BTS IG mais nous devons également supprimer tous les
+étudiants présents dans cette classe.
+14. Afficher le nombre d’étudiants par classes.
+15. Afficher la moyenne maximale générale pour la classe des BTS IG.
+16. Afficher la liste des classes qui contiennent moins de 15 étudiants.
+17. Afficher les notes de Mathématiques de l’étudiant Hassan Sehef.
+18. Afficher toutes les appréciations de Bill Murray en Anglais.
+19. Afficher la matière qui comporte le plus de notes.
+20. Afficher le nom, prénom et moyenne du premier de la classe.

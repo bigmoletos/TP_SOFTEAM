@@ -1,0 +1,51 @@
+﻿
+Symfony probleme d'installation
+aout2017
+
+
+/////////////////////////
+erreur :
+...........cURL error 60:SSL..............
+//////////////////////////////
+
+https://openclassrooms.com/forum/sujet/symfony-3-erreur-installation?page=1#message-91168649
+
+1
+php symfony.phar new Symfony
+Cela fonctionne parfaitement.
+
+comme le recommandait Anssar amine J'ai téléchargé cacert.pem au lien suivant
+
+https://curl.haxx.se/ca/cacert.pem
+
+
+
+
+Je placé  cacert.pem dans le dossier C:\wamp64\bin\php  (c'est wamp64 chez moi)
+
+comme j'ai php5.16 et php7.0 j'ai modifié les fichier php.ini  des deux versions vers les ligne 1981 environ à la section [curl]
+
+Les fichiers php.ini des deux répertoires suivants :
+C:\wamp64\bin\php\php5.6.16
+C:\wamp64\bin\php\php7.0.0
+
+A la section
+
+[curl]
+; A default value for the CURLOPT_CAINFO option. This is required to be an
+; absolute path.
+curl.cainfo = "C:/wamp64/bin/php/cacert.pem"
+
+!!!!!!
+EDIT : Problème résolu. A tout ceux qui font un peu vite, n'oublier pas de décommenter la ligne curl.cainfo en enlevant le point virgule devant ;)
+!!!!!
+
+
+j'ai redémarré les services de Wamp64 et dans le répertoire C:\wamp64\www j'ai lancé la commande: php symfony.phar new Symfony
+
+
+dans la cmd tapez:
+ C:\wamp64\www j'ai lancé la commande\php symfony.phar new Symfony
+
+-
+Edité par jazz77 1 juillet 2016 à 11:01:55

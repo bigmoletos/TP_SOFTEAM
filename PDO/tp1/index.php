@@ -1,9 +1,28 @@
 <?php
+//chargement des classes
 require('chargeurClass.php');
+//chargement de la connexion
 require('connexionBDR.php');
 $db = connexionDB();
+//nouvel objet de la classe NewsManager instancié 
+//par les attributs de la connexionDB() à la base donnée mysql
 $manager = new NewsManager($db);
 
+//$change='lire';
+
+//initialisation des variables GET id et change
+if (isset($_GET['id'])){
+    $id=$_GET['id'];
+}else{
+    $id="";
+}
+
+if (isset($_GET['change'])){
+    $change=$_GET['change'];
+    
+}else{
+    $change='lire';
+}
  date_default_timezone_set("Europe/Paris");
 
  //controle des données dans l'URL pour savoir si on a cliqué sur modifier ou sur supprimer
@@ -12,20 +31,24 @@ $manager = new NewsManager($db);
  
  //fonction qui se charge d'afficher toutes les news de la bdr en version courte
     function afficheNewsCourte($manager){
-//la variable tableau stocke la liste des données passées par la fonction liste du manager
-  $listeNews=$manager->getList();
-       // $id=$_GET['id'];
-//     echo ' <table>';    
-    foreach ($listeNews as  $value) {
-
-       echo' 
-            <tr><td>'.$value->getId().'</td>
-            <td><a href="http://localhost:8888/TP_SOFTEAM/softeam/TP/PDO/tp1/index.php?id='.$value->getId().'&change=details">'.$value->getTitre().'</a></td>
-            <td>'.$value->getAuteur().'</td>
-            <td>'.substr($value->getContenu(), 0 , 50 ).'.....</td>
-            <td>'.$value->getDate_ajout().'</td>
-            <td>'.$value->getDate_modif().'</td>
-            </tr>';
+            //la variable tableau stocke la liste des données passées par la fonction liste du manager
+                 $listeNews=$manager->getList();
+                   // $id=$_GET['id'];
+            //     echo ' <table>';    
+                foreach ($listeNews as  $value) {
+            //on cache la colonne id car elle n'a pas d'interet pour le visiteur
+//           met en lien cliquable l auteur et rajoutant l'id et la vairable change=details dans l'ur 
+            $dateA = new DateTime($value->getDate_Ajout());
+           $dateM= new DateTime($value->getDate_modif());
+                    
+                    echo' 
+                    <tr><td style="display:none">'.$value->getId().'</td>
+                    <td><a href="http://localhost:8888/TP_SOFTEAM/softeam/TP/PDO/tp1/index.php?id='.$value->getId().'&change=details">'.$value->getTitre().'</a></td>
+                    <td>'.$value->getAuteur().'</td>
+                    <td>'.substr($value->getContenu(), 0 , 50 ).'.....</td>
+                    <td>'.$dateA->format('d/m/Y à H\hi').'</td>
+                    <td>'.$dateM->format('d/m/Y à H\hi').'</td>
+                    </tr>';
                }
        }
 
@@ -33,16 +56,16 @@ $manager = new NewsManager($db);
   
     function afficheNewslongue($manager){
 //la variable tableau stocke la liste des données passées par la fonction liste du manager
-        $id=$_GET['id'];
+        !isset($_GET['id']) ? $id="" :  $id=$_GET['id'];// ternaire
        // var_dump($id);
         $news=$manager->Load($id);
        // $id=$_GET['id'];
 //     echo ' <table>';    
           echo' 
-            <tr><td >'.$news->getId().'</td>
+            <tr><td hidden>'.$news->getId().'</td>
             <td><a href="http://localhost:8888/TP_SOFTEAM/softeam/TP/PDO/tp1/index.php?id='.$news->getId().'&change=lire">'.$news->getTitre().'</a></td>
             <td>'.$news->getAuteur().'</td>
-            <td>'.substr($news->getContenu(), 0 , 50 ).'.....</td>
+            <td>'.$news->getContenu().'</td>
             <td>'.$news->getDate_ajout().'</td>
             <td>'.$news->getDate_modif().'</td>
             </tr>';
@@ -102,17 +125,19 @@ and open the template in the editor.
         <h3>liste des derniéres news</h3>  
 <form>
     <table border="6">
-        <tr><th >id</th><th>titre</th><th>auteur</th><th>contenu</th><th>date_ajout</th><th>date_modif</th>
+        <tr><th hidden>id</th><th>titre</th><th>auteur</th><th>contenu</th><th>date_ajout</th><th>date_modif</th>
             
       
         <?php  
-        if ($_GET['change'] ==='lire'){
+        //fait appel à la variable change de l'adresse url et affiche soit une news en version longue
+        //soit une news en version courte
+        if ($change==='lire'){
            echo  afficheNewscourte($manager);
         }
-         if ($_GET['change'] =='details'){
-           echo afficheNewslongue($manager);
+        if ($change == 'details') {
+            echo afficheNewslongue($manager);
         }
-       // echo"  $_GET['change'] =='lire' ? afficheNewscourte($manager) : afficheNewslongue($manager) ";
+// echo"  $_GET['change'] =='lire' ? afficheNewscourte($manager) : afficheNewslongue($manager) ";
         ?>
           </tr>
     </table>
@@ -134,8 +159,8 @@ and open the template in the editor.
      <a href="admin.php?id=1&change=modifier" >lien vers admin</a>     
         
          <?php
-        echo '<br>id='. $_GET['id'];
-        echo '<br>change='. $_GET['change'];
+        echo '<br>id= '.$id;
+        echo '<br>change= '.$change;
         ?>
     </body>
 </html>

@@ -6,8 +6,9 @@
  * and open the template in the editor.
  */
 
-function connect() {
-    $db = new PDO('mysql:host=localhost;dbname=news', 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $db;
+function autoload($classname) {
+    if (file_exists($file = __DIR__ . '/' . $classname . '.php')) {
+        require $file;
+    }
 }
+spl_autoload_register('autoload');

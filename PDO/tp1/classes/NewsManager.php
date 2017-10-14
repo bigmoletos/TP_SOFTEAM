@@ -51,7 +51,8 @@ class NewsManager {
 //                    and auteur = :auteur 
 //                    and contenu = :contenu 
 //                    and date_ajout = :date_ajout');
-
+            //pour mettre les date en francais dans la requete
+              $bdd->query(" SET lc_time_names = 'fr_FR'");
             $req = $this->db->prepare("INSERT INTO news (titre, auteur, contenu, date_ajout, date_modif )"
                     . " VALUES (:titre, :auteur, :contenu, Now(), Now())");
 

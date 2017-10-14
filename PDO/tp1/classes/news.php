@@ -131,6 +131,7 @@ class News {
 
     public function setDate_ajout(DateTime $date_ajout) {
         $this->dateAjout = $date_ajout;
+       
     }
 
     public function setDate_modif(DateTime $date_aodif) {
@@ -188,8 +189,7 @@ class News {
      public function isValid(){
     return !(empty($this->Titre) or empty($this->Auteur) or empty($this->Contenu));
      }
-     
-     
+    
      
     //methode isNews() qui renvoie vrai si une news est nouvelle (pour pouvoir l’enregistrer)
     //         si l'id de l'objet exist retourne faux, il faut verifier dans la base que l'id n'est pas deja dans la base'   
@@ -218,11 +218,12 @@ class News {
 //    *******************************
     
    //cette methode permet d'avoir les dates et heure au format europeen
-    public function dateFr(){
+    public function dateFr($ajout){
        date_default_timezone_set("Europe/Paris");
         //        //donne la date et l'heure d'enregistrement du fichier
-        $dateFr = date("d/m/Y à H:i:s");
-       return $dateFr;
+        $ajout = date("d/m/Y à H:i:s");
+        var_dump($ajout);
+       return $ajout;
    }
     
     //methode permettant d'ajouter les news dans le BD si elle est nouvelle  //fichier ayant pour nom nomdeesnews.txt   

@@ -39,6 +39,7 @@ function connexionDB() {
         //   $connexion=new PDO('mysql:host=$serveur;dbname=$bdd',$login,$pass);
         $connexion = new PDO($driver, $utilisateur, $motdepasse);
         $connexion->setattribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
         $db=$connexion;
         echo "connection réussie";
         return $db; //en dehors de la fonction il faudra faire un set $db poour l'appeler

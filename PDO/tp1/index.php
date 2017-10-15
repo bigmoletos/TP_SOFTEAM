@@ -3,6 +3,7 @@
 require('chargeurClass.php');
 //chargement de la connexion
 require('connexionBDR.php');
+//require('admin.php');
 $db = connexionDB();
 //nouvel objet de la classe NewsManager instancié 
 //par les attributs de la connexionDB() à la base donnée mysql
@@ -46,6 +47,7 @@ if (isset($_GET['change'])){
                     <td><a href="http://localhost:8888/TP_SOFTEAM/softeam/TP/PDO/tp1/index.php?id='.$value->getId().'&change=details">'.$value->getTitre().'</a></td>
                     <td>'.$value->getAuteur().'</td>
                     <td>'.substr($value->getContenu(), 0 , 50 ).'.....</td>
+                    <td><a href="http://localhost:8888/TP_SOFTEAM/softeam/TP/PDO/tp1/index.php?id='.$value->getId().'&change=lire">'.$value->getImage().'</a></td>
                     <td>'.$dateA->format('d/m/Y à H\hi').'</td>
                     <td>'.$dateM->format('d/m/Y à H\hi').'</td>
                     </tr>';
@@ -66,6 +68,7 @@ if (isset($_GET['change'])){
             <td><a href="http://localhost:8888/TP_SOFTEAM/softeam/TP/PDO/tp1/index.php?id='.$news->getId().'&change=lire">'.$news->getTitre().'</a></td>
             <td>'.$news->getAuteur().'</td>
             <td>'.$news->getContenu().'</td>
+            <td>'.$news->getImage().'</td>    
             <td>'.$news->getDate_ajout().'</td>
             <td>'.$news->getDate_modif().'</td>
             </tr>';
@@ -74,7 +77,21 @@ if (isset($_GET['change'])){
  
  
 // ******************
- 
+  //methode pour afficher les images
+ function imageUser($manager){
+                 !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
+                  $news=$manager->Load($id);
+                  $image= $news->getImage();
+                  // var_dump($image);
+                  // echo $image;
+                  $nomcourt=str_replace("image/","",$image);
+                  if ($_GET['change']=='lire') echo'<img src="'.$image.'" alt="'.$nomcourt.'" style="width:100px ;height:100px;" />';
+                 if ($_GET['change']=='details') echo'<img src="'.$image.'" alt="'.$nomcourt.'" style="width:400px ;height:400px;" />';
+                 
+// echo $image;
+                  return $image;
+                  
+         }
  
  
  if (isset($_GET['modifier'])){
@@ -125,7 +142,7 @@ and open the template in the editor.
         <h3>liste des derniéres news</h3>  
 <form>
     <table border="6">
-        <tr><th hidden>id</th><th>titre</th><th>auteur</th><th>contenu</th><th>date_ajout</th><th>date_modif</th>
+        <tr><th hidden>id</th><th>titre</th><th>auteur</th><th>contenu</th><th>image</th><th>date_ajout</th><th>date_modif</th>
             
       
         <?php  
@@ -142,6 +159,7 @@ and open the template in the editor.
           </tr>
     </table>
 
+    <br />  <?php echo imageUser($manager); ?>
 
 
 

@@ -18,8 +18,15 @@ $id=1;
           
          foreach ($listeNews as  $value) {
            //conversion des dates  au format europeen
-           $dateA = new DateTime($value->getDate_Ajout());
-           $dateM= new DateTime($value->getDate_modif());
+          // $dateM= new DateTime($value->getDate_ajout());
+             $dateA = $value->getDate_ajout();
+         // $dateA= new DateTime($dateA);
+           var_dump($dateA);
+          // $dateM= new DateTime($value->getDate_modif());
+           $dateM= $value->getDate_modif();
+           
+           $dateM= new DateTime( $dateM);
+           var_dump($dateM);
            $nomImageCourt=  str_replace("image/", "", $value->getImage());
            echo' 
                 <tr><td>'.$value->getId().'</td>
@@ -54,6 +61,7 @@ function saveUpdate($manager)
         {
             //affectation des variables du formulaire  modifierNews
             $id=$_POST['id'];//le fomulaire etant hidden sur l'id il devrait toujors etre !isset
+         //  $id=3;
             $titre=$_POST['titre'];
             $auteur=$_POST['auteur'];
             $contenu=$_POST['contenu'];       
@@ -69,11 +77,11 @@ function saveUpdate($manager)
                                )
                             );
          //on verifie l'id du post pour savoir si il existe deja dans la bdr
-           if (isset($_POST['id'])) 
-               {
+//           if (isset($_POST['id'])) 
+//               {
                 $news->setId($_POST['id']);
                 
-               }
+//               }
            //setter de l'id de la classe news    
            //public function setId($id) {
            //        $this->id = (int) $id;

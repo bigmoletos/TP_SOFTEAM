@@ -126,7 +126,7 @@ class NewsManager {
         $news = $requete->fetch();
         $news->setDate_ajout(new DateTime($news->getDate_ajout()));
         $news->setDate_modif(new DateTime($news->getDate_modif()));
-       // var_dump($news);
+       var_dump($news);
         return $news;
     
     }

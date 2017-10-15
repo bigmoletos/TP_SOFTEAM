@@ -85,13 +85,13 @@ class News {
         $this->contenu = $contenu;
     }
 
-//    public function setdate_ajout($date_ajout) {
-//        $this->date_ajout = $date_ajout;
-//    }
-//
-//    public function setdate_modif($date_modif) {
-//        $this->date_ajout = $date_modif;
-//    }
+    public function setDate_ajout($date_ajout) {
+        $this->date_ajout = $date_ajout;
+    }
+
+    public function setDate_modif($date_modif) {
+        $this->date_ajout = $date_modif;
+    }
 //
 //     public function setImage($image) {
 //        $this->image = $image;
@@ -129,14 +129,14 @@ class News {
 //        }
 //    }
 
-    public function setDate_ajout(DateTime $date_ajout) {
-        $this->dateAjout = $date_ajout;
-       
-    }
-
-    public function setDate_modif(DateTime $date_aodif) {
-        $this->dateModif = $date_aodif;
-    }
+//    public function setDate_ajout(DateTime $date_ajout) {
+//        $this->dateAjout = $date_ajout;
+//       
+//    }
+//
+//    public function setDate_modif(DateTime $date_modif) {
+//        $this->dateModif = $date_modif;
+//    }
 
     public function setImage($image) {
         $this->image = $image;

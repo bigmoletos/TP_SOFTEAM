@@ -45,29 +45,76 @@ function afficheNewsDel($manager){
 
 //fonction pour modifer une news, l'ajoute (INSERT TO)
 // avec save() si elle n'existe pas deja ou l'a modifie (UPDATE) avec update() si elle existe deja
-function afficheNewsModif($manager){
- //!isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
-//   $modif=$manager->Save(News $news); 
+function saveUpdate($manager)
+{
+    //!isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
+    //$modif=$manager->Save(News $news); 
      if(isset($_POST['modifierNews'])){
-            if(isset($_POST['titre']) && isset( $_POST['auteur']) && isset($_POST['contenu']) ){
-             $titre=$_POST['titre'];
-             $auteur=$_POST['auteur'];
-             $contenu=$_POST['contenu'];       
+        if(isset($_POST['titre']) && isset( $_POST['auteur']) && isset($_POST['contenu']) && isset($_POST['listeImages']) )
+        {
+            //affectation des variables du formulaire  modifierNews
+            $id=$_POST['id'];//le fomulaire etant hidden sur l'id il devrait toujors etre !isset
+            $titre=$_POST['titre'];
+            $auteur=$_POST['auteur'];
+            $contenu=$_POST['contenu'];       
+            $image=$_POST['listeImages'];
+            //creation d'un objet tableau $news de la classe News avec les données du formulaire,
+            // les index correspondent aux noms des attributs de la classe news
+           $news = new News(
+                               array(
+                               'auteur' => $auteur,
+                               'titre' => $titre,
+                               'contenu' => $contenu,
+                               'image' =>$image
+                               )
+                            );
+         //on verifie l'id du post pour savoir si il existe deja dans la bdr
+           if (isset($_POST['id'])) 
+               {
+                $news->setId($_POST['id']);
                 
-                
-                
-           }
-     }   
-  }
+               }
+           //setter de l'id de la classe news    
+           //public function setId($id) {
+           //        $this->id = (int) $id;
+
+           if ($news->isValid()) 
+               {
+                    $manager->save($news);
+                    $message = $news->isNew() ? 'La news a bien été ajoutée !' : 'La news a bien été modifiée !';
+               } else {
+                   //$erreurs = $news->erreurs();
+                  // echo "erreur dans le traitement";
+                   }
+            var_dump($id); 
+            var_dump($image);
+            var_dump($contenu);
+            var_dump($titre);
+            var_dump($auteur);
+       }
+     }  // echo "vous avez oublié de remplir un champ";
+} 
+ 
+ 
+   echo saveUpdate($manager); 
     
     
-    
-    
-}
+
 
 //***************************************
 
-        //fonction pour afficher l'auteur
+         //fonction pour afficher l'id quand on clique sur modifier
+          function id($manager){
+                 !isset($_GET['id']) ? $id=10:  $id=$_GET['id'];// ternaire
+                  $news=$manager->Load($id);
+                  $id= $news->getId();
+                //   var_dump($id);
+                  // echo $auteur;
+                  return $id;
+         }
+         // echo id($manager);
+          //var_dump($id);
+        //fonction pour afficher l'auteur quand on clique sur modifier
           function auteur($manager){
                  !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
                   $news=$manager->Load($id);
@@ -76,7 +123,7 @@ function afficheNewsModif($manager){
                   // echo $auteur;
                   return $auteur;
          }
-         //fonction pour afficher le titre
+         //fonction pour afficher le titre quand on clique sur modifier
           function titre($manager){
                  !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
                   $news=$manager->Load($id);
@@ -85,7 +132,7 @@ function afficheNewsModif($manager){
                   // echo $titre;
                   return $titre;
          }
-          //fonction pour afficher le contenu
+          //fonction pour afficher le contenu quand on clique sur modifier
           function contenu($manager){
                  !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
                   $news=$manager->Load($id);
@@ -95,7 +142,7 @@ function afficheNewsModif($manager){
                   return $contenu;
          }
 
-          //fonction pour afficher le lien de l'image de la bdr
+          //fonction pour afficher le lien de l'image de la bdr quand on clique sur modifier
           function image($manager){
                  !isset($_GET['id']) ? $id=1 :  $id=$_GET['id'];// ternaire
                  $news=$manager->Load($id);
@@ -143,13 +190,15 @@ function afficheNewsModif($manager){
    
 //   affichage de l'image selcetionnée
    if(isset($_POST['modifierNews'])){ 
+        if(isset($_POST['titre']) && isset( $_POST['auteur']) && isset($_POST['contenu']) && isset($_POST['listeImages']) ){
              $imageSelectionné=$_POST['listeImages'];
              $imageSelectionné=  str_replace("'","", $imageSelectionné) ; 
              $imageSelectionné=  str_replace(" .","", $imageSelectionné) ;
              $imageSelectionné=  str_replace(". ","", $imageSelectionné) ; 
              $imageSelectionné=  "image/".$imageSelectionné ; 
          //var_dump($imageSelectionné);
-        }
+        }echo"vous avez oublié de remplir un champ";
+   }
 //****************
 
    
@@ -210,33 +259,35 @@ correspondant à l'id de la news selectionnée par le bouton modifier-->
     </table>
 
 <!--champs de saisie des news-->
-<!--saisie du titre-->
-    <label for="titre">votre titre</label>
-    <input type="text" name="titre" id="titre" placeholder="ex: Les nymphes" 
-           value="<?php echo isset($_GET['change']) && $_GET['change']=='modifier' ?  titre($manager) : ""; ?>" 
-           maxlength="20" size="30">
-<!--saisie de l'auteur-->
-    <br />
-    <label for="auteur">votre nom</label>
-    <input type="text" name="auteur" id="auteur" placeholder="ex: Les nymphes" 
-           value="<?php echo isset($_GET['change']) && $_GET['change']=='modifier' ? auteur($manager): ""; ?>" 
-           maxlength="20" size="30">
- <!--saisie du contenu-->
-    <br />
-    <label for="contenu">votre contenu</label>
-    <textarea name="contenu" id="contenu"  rows="8" cols="100" placeholder="ex: Les nymphes..........." >
-       <?php echo isset($_GET['change']) && $_GET['change']=='modifier' ? contenu($manager): "";//ternaire le champ se remplit si change=modifer et si modifier est set ?>
-    </textarea>
-
+    <!--saisie de l'id, quand on clique sur modifier on renseigne l'id sinon il est vide-->
+    <p>id de la news à modifier : <?php echo id($manager) ?></p>
+       
+         <input type="hidden" name="id" id="id"  
+               value="<?php echo isset($_GET['change']) && $_GET['change']=='modifier' ?  id($manager) : ""; ?>">
+        <br />
+    <!--saisie du titre-->
+        <label for="titre">votre titre</label>
+        <input type="text" name="titre" id="titre" placeholder="ex: Les nymphes" 
+               value="<?php echo isset($_GET['change']) && $_GET['change']=='modifier' ?  titre($manager) : ""; ?>" 
+               maxlength="20" size="30">
+    <!--saisie de l'auteur-->
+        <br />
+        <label for="auteur">votre nom</label>
+        <input type="text" name="auteur" id="auteur" placeholder="ex: Alain Thiers" 
+               value="<?php echo isset($_GET['change']) && $_GET['change']=='modifier' ? auteur($manager): ""; ?>" 
+               maxlength="20" size="30">
+     <!--saisie du contenu-->
+        <br />
+        <label for="contenu">votre contenu</label>
+        <textarea name="contenu" id="contenu"  rows="8" cols="100" placeholder="ex: Il était une fois..........." >
+           <?php echo isset($_GET['change']) && $_GET['change']=='modifier' ? contenu($manager): "";//ternaire le champ se remplit si change=modifer et si modifier est set ?>
+        </textarea>
 
 <!--<br />
 <label for="image">image à integrer</label>
 <input type="text" name="image" id="image" placeholder="\image\image1.jpg" 
        value="<?php //echo isset($_GET['change']) && $_GET['change']=='modifier' ? image($manager): ""; ?>" 
        maxlength="200" size="110">-->
-
-    <!--affiche l'image de la news quand on clique sur son nom-->
-    <br />  <?php echo image($manager); ?>
 
     <!--<br /> affiche le menu déroulant pour choisir l'image-->
    <p> <?php echo menuDeroulantImage(); ?>
@@ -246,9 +297,10 @@ correspondant à l'id de la news selectionnée par le bouton modifier-->
    </p>
    
     <!--bouton de validation d'une modif ou d'une nouvelle news-->
-    <!--<br />-->
     <input type="submit" name="modifierNews" id="modifierNews" value="valider modif" >
 
+    <!--affiche l'image de la news quand on clique sur son nom-->
+    <br />  <?php echo image($manager); ?>
    
     <!--affiche une image-->
     <p><img src="image/image1.jpg" alt="image1" style="width:100px ;height:100px;" /></p>

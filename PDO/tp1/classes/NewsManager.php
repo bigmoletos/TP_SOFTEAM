@@ -159,8 +159,8 @@ class NewsManager {
     }
 
 //**************************************************
-    // méthode save() permettant de vérifier qu’une news isValid(), et si elle est isNew(),
-    //l’ajouter, sinon la modifier avec update()
+    // méthode save() permettant de vérifier une news isValid(), et si elle est isNew(),
+    //pus l’ajoute avec addnews(), sinon la modifier avec update()
      public function save(News $news) {
         if ($news->isValid()) {
             $news->isNew() ? $this->addNews($news) : $this->update($news);

@@ -73,18 +73,18 @@ class News {
 //        $this->id = $id;
 //    }
 //
-//    public function setAuteur($auteur) {
-//        $this->auteur = $auteur;
-//    }
+    public function setAuteur($auteur) {
+        $this->auteur = $auteur;
+    }
 //
-//    public function setTitre($titre) {
-//        $this->titre = $titre;
-//    }
+    public function setTitre($titre) {
+        $this->titre = $titre;
+    }
 //
-//    public function setContenu($contenu) {
-//        $this->contenu = $contenu;
-//    }
-//
+    public function setContenu($contenu) {
+        $this->contenu = $contenu;
+    }
+
 //    public function setdate_ajout($date_ajout) {
 //        $this->date_ajout = $date_ajout;
 //    }
@@ -105,29 +105,29 @@ class News {
         $this->id = (int) $id;
     }
 
-    public function setAuteur($auteur) {
-        if (!is_string($auteur) || empty($auteur)) {
-            $this->erreurs[] = self::AUTEUR_INVALIDE;
-        } else {
-            $this->auteur = $auteur;
-        }
-    }
+//    public function setAuteur($auteur) {
+//        if (!is_string($auteur) || empty($auteur)) {
+//            $this->erreurs[] = self::AUTEUR_INVALIDE;
+//        } else {
+//            $this->auteur = $auteur;
+//        }
+//    }
+//$news->Titre()
+//    public function setTitre($titre) {
+//        if (!is_string($titre) || empty($titre)) {
+//            $this->erreurs[] = self::TITRE_INVALIDE;
+//        } else {
+//            $this->titre = $titre;
+//        }
+//    }
 
-    public function setTitre($titre) {
-        if (!is_string($titre) || empty($titre)) {
-            $this->erreurs[] = self::TITRE_INVALIDE;
-        } else {
-            $this->titre = $titre;
-        }
-    }
-
-    public function setContenu($contenu) {
-        if (!is_string($contenu) || empty($contenu)) {
-            $this->erreurs[] = self::CONTENU_INVALIDE;
-        } else {
-            $this->contenu = $contenu;
-        }
-    }
+//    public function setContenu($contenu) {
+//        if (!is_string($contenu) || empty($contenu)) {
+//            $this->erreurs[] = self::CONTENU_INVALIDE;
+//        } else {
+//            $this->contenu = $contenu;
+//        }
+//    }
 
     public function setDate_ajout(DateTime $date_ajout) {
         $this->dateAjout = $date_ajout;

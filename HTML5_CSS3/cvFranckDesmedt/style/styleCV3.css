@@ -1,0 +1,481 @@
+/* Feuille de styles CSS */
+/*************************************************************/
+
+
+/*****************************************************************/
+
+/* /////////////////////////////////////////////////////////// */
+/* polices */
+/* ////////////////////////////////////////////////////////// */
+
+@font-face 
+{  
+    font-family: 'AmaticSC-Regular'; 
+    src: url('../font/AmaticSC-Regular.eot'); 
+    src: url('../font/AmaticSC-Regular.eot?#iefix') format('embedded-opentype'), 
+        url('../font/AmaticSC-Regular.woff') format('woff'), 
+        url('../font/AmaticSC-Regular.ttf') format('truetype'),
+        url('../font/AmaticSC-Regular.svg#AmaticSC-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-size:20px;
+
+} 
+
+@font-face 
+{  
+    font-family: 'AmaticSC-Regular'; 
+    src: url('../font/AmaticSC-Regular.eot'); 
+    src: url('../font/AmaticSC-Regular.eot?#iefix') format('embedded-opentype'), 
+        url('../font/AmaticSC-Regular.woff') format('woff'), 
+        url('../font/AmaticSC-Regular.ttf') format('truetype'),
+        url('../font/AmaticSC-Regular.svg#AmaticSC-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-size:1em;
+
+} 
+
+@font-face
+{
+    font-family: 'cac_champagnebold';
+    src: url('../font/cac_champagne-webfont.eot');
+    src: url('../font/cac_champagne-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../font/cac_champagne-webfont.woff2') format('woff2'),
+        url('../font/cac_champagne-webfont.woff') format('woff'),
+        url('../font/cac_champagne-webfont.ttf') format('truetype'),
+        url('../font/cac_champagne-webfont.svg#cac_champagnebold') format('svg');
+    font-weight: normal; 
+    font-style: italic; 
+    font-size:200%; 
+}
+
+
+/*font logo de fontawesome*/
+@fa-font-path{
+    "../font/font-awesome-4.7.0/";
+} 
+
+.fa fa-phone-square{
+    font-size:500px; 
+    /*color: blue;*/
+}
+
+.fa fa-linkedin-square{
+    font-size:500px; 
+    color: blue;
+}
+
+h1{
+    font-family: 'cac_champagneregular', Arial, serif;
+    font-size: 2em;
+    /* text-align:center; */
+    text-shadow: 2px 2px 0px white;
+    /* color:rgba(36, 31, 31, 0.8); */
+}
+
+h2{
+    font-family: 'AmaticSC-bold', Arial, serif;
+    font-size: 1em;
+    /* text-align:center; */
+    text-shadow: 1px 1px 0px white;
+    /* color:rgba(36, 31, 31, 0.8); */
+}
+
+h3{
+
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+
+
+
+body
+{
+    background-image: url('../images/fond2.png');
+    background-attachment: fixed; /* Le fond restera fixe */
+    width:100%;
+    margin: auto;
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/*formatage textes et blocs*/
+/* /////////////////////////////////////////////////////////////////////////// */
+.photo
+{
+    /*display: inline-block;*/
+    display: left;
+    max-width: 50%;
+    width: 20%;
+    height: 20%;
+
+    /*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+
+}
+
+#bandeau{
+    display: inline-block;
+    padding-left: 1%;
+    align-items: center;
+    background-color: #95a5a6;
+    background-image: url("../images/snow.png");
+    /*gestion des cesures pour les navigateurs sauf mozilla*/
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    /*gestion des cesures pour mozilla*/
+    overflow-wrap: break-word;
+    /*   background-color: #95a5a6;
+    background-image: url("../images/snow.png"); */
+/*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+}
+
+#header_haut{
+    display: flex;
+    
+
+
+}
+
+q{
+    color:#34495e; 
+}
+
+
+#bloc_central{
+    display: flex;
+    /*    display: inline;*/
+    /*    background-color: #bdc3c7; */
+    width:100%;
+    margin-top: 0.3%;
+    margin-bottom: 0.3%;
+    flex-wrap:wrap;
+    
+    /*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+}
+
+#Contact_Presentation{
+    background-color: #2c3e50;
+    padding:1%;
+    width: 18%;
+    color: #ecf0f1;
+    float: left;
+    /*gestion des cesures pour les navigateurs sauf mozilla*/
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    /*gestion des cesures pour mozilla*/
+    overflow-wrap: break-word;
+    
+    /*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+
+}
+
+#bloc_contact{
+    /*background-color: #2c3e50;*/ 
+    color: #ecf0f1;
+    /*    padding:5px;*/
+}
+
+#bloc_contact a{
+    color:#01A9DB;
+
+}
+
+#bloc_presentation{
+    /*background-color: #2c3e50;*/
+    /*padding:5px;*/
+}
+
+main{
+    display: box;
+    padding:1%;
+    float:left;
+    width:58%;
+    margin-left: 0.5%;
+    /*background-color: #eeeeee;*/
+    /*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+}
+
+#experience{
+    /*padding:5px;*/
+}
+
+
+#liste_experience{
+    /*    padding:5px;
+        margin:5px;*/
+}
+
+#formations{
+    /*    padding:5px;
+        margin:5px;*/
+
+}
+
+
+#liste_Formations{
+    /*    padding:5px;
+        margin:5px;*/
+}
+
+
+
+
+
+
+#competences{
+    background-color: #bdc3c7;  
+    padding-left: 1%;
+    /*position: relative;*/
+    float: right;
+    width:18%;
+    padding:0.3%;
+    
+    /*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+}
+/*************************************/
+/*barre de progression*/
+
+progress {
+    display: block; /* default: inline-block */
+    width: auto;
+    /*   margin: 1em auto;
+       padding: 4px;*/
+    border: 0 none;
+    background: #3498db;
+    background-color:#e74c3c;
+    border-radius: 14px;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),
+        0px 1px 0px rgba(255,255,255,0.2);
+}
+/*pour firefox*/
+progress::-moz-progress-bar {
+    background: #3498db;
+    background-color:#34495e;
+    border-radius: 2px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4),
+        0 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+/* une méthode pour ne cibler que Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    progress {
+        height: 10px; /* légèrement plus fin sur Chrome par défaut */
+    }
+}
+/* on enlève le fond de cet élément supplémentaire */
+progress::-webkit-progress-bar {
+    background: transparent;
+}
+/* on applique les mêmes styles que sur ::-moz-progress-bar */
+progress::-webkit-progress-value {  
+    background: #3498db;
+    border-radius: 5px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4),
+        0 2px 5px 0px rgba(0,0,0,0.3); 
+}
+
+/*****************************************/
+footer{
+    background-color: #bdc3c7; 
+    color:#2c3e50 ;
+    padding:5px;
+    text-align: center;
+    /* clear: both; retire tous les floats precedents pour dire au block de retravailler en mode block classique*/
+    clear:both;
+
+
+    width: 100%; 
+    /*travail sur les angles*/
+    -moz-border-radius: 1%; 
+    -webkit-border-radius: 1%; 
+    -khtml-border-radius: 1%; 
+    border-radius: 5% 5% 5% 5%; 
+    border:5px rgba(76, 71, 71, 1);
+
+    /* ombrage */
+    box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+
+}
+footer a{
+    color:#1E5E73;
+}
+
+.linkedin{
+    height: 20px;
+    width: 20px; 
+
+}
+
+/*responsive*/
+/***************************************************************/
+
+img, oject, canvas, video, audio {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width:480px){
+    .photo{
+        display: none;
+
+    }
+
+    #bloc_central{
+        display:inline-flex;
+        flex-direction:column;
+        /*        justify-content:flex-start ;
+                align-items: flex-start;*/
+        direction:ltr;
+        /*grid-template-columns: repeat(auto-fill, 33%);*/
+    }
+    #Contact_Presentation{
+        display:block ;
+        align-content: center;
+        width: auto;
+    }
+
+    #main{
+
+        display: flex;
+        width: auto;
+        align-content: center;
+        clear: both;
+    }
+    #experience{
+        display: block;
+        width: auto;
+        align-content: center;
+        #formations   {
+            display: block;
+            width: auto;
+        }
+    }
+    #competences{
+        display:block;
+        width: auto;
+    } 
+    progress{
+        display: none;
+
+    }
+}
+
+
+@media only screen and (max-width:1024px) and (min-width:480px){
+
+    /*    width:60%; The width is 100%, when the viewport is 800px or smaller
+        font-size: 2em;*/
+
+
+    .photo{
+        /*display: inline-block;*/
+        width: 10%;
+        height: 10%;
+    }
+    #Contact_Presentation{
+        display:inline-block ;
+        align-content: center;
+        
+    }
+    #bloc_central{
+        display: flex;
+    }
+    
+}
+
+@media only screen and (min-width:1024px){
+/*    header, body, footer {
+        width:50%; The width is 100%, when the viewport is 800px or smaller
+
+        max-width: 40%;
+        height: 40%;
+    }*/
+ .photo{
+        /*display: inline-block;*/
+        width: 30%;
+        height: 30%;
+    }
+    #Contact_Presentation{
+        display:inline-block ;
+        align-content: center;
+        
+    }
+    #bloc_central{
+        display: flex;
+    }
+}

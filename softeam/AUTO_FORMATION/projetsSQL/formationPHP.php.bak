@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>eci est ma 1er feuille en PHP</title>
+		
+		<meta charset="utf-8"/>
+	</head>	
+		
+		
+	<body>
+		<p> ceci est un paragraphe en html </br>
+		2éme  page</br></p>
+		
+		<?php
+			echo "ceci est mon premier essai  en php </br></br>"; //ne pas oublier le ; à  la fin de chaque ligne de commande
+			$departement="bouches du rhone";
+			$dpt=13008;
+			$chiffre=13.5;
+			$varbool=true;
+			$variable1=10;
+			$variable2=5;
+			$variable3=2;
+			
+			$multiplication=$variable1*$dpt. '</br></br>';
+			
+			
+			echo $multiplication;
+			echo 'nous sommes dans les '  .$departement. ' dans l arrondissement' .$dpt. '</br>';
+			echo "nous sommes dans les  $departement dans l'arrondissement $dpt </br></br>";
+			echo 'la multiplication de  ' .$variable1. ' par le' .$dpt. ' est :' .$variable1 *$dpt. '</br>';
+			echo 'la multiplication de  ' .$variable1. ' par le' .$dpt. ' est :' .$multiplication. '</br></br>';
+			
+			
+			if($variable1>=$variable2){
+				echo 'la variable1 : ' .$variable1. ' est supérieure à la variable2 : ' .$variable2.'</br>';
+			}
+			
+			if($variable1==$variable2){
+				echo 'la variable1 : '.$variable1.' est égale à la variable2 : '.$variable2.'</br>';
+			}
+			else{
+				echo 'la variable1 : '.$variable1.' est différente de la variable2 : '.$variable2.'</br>';
+			}
+			
+			if($variable1!=10 OR $variable1!=0){
+				echo 'la variable1 : '.$variable1.' est différente de 10 ou de 0 </br>';
+			}
+			elseif($variable1==10 OR $variable==0){
+				echo 'la variable1 : '.$variable1.' est égale à 10 ou à 0 </br>';
+			}
+			else{
+				echo'la variable1 : '.$variable1.' est ni égale à 10 ou à 0 </br>';
+			}
+		?>
+	</body>
+
+
+
+</html>

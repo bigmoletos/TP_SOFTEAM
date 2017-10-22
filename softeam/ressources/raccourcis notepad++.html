@@ -1,0 +1,149 @@
+﻿RACCOURCIS NOTEPAD++
+Ctl + N : Nouveau (respectant les paramètre par défaut)
+Ctl + O : Ouvrir (en partant du dossier du document qui à le focus, si aucun, le dossier par défaut)
+Ctl + S : Sauvegarder
+Ctl + Alt + S : Sauvegarder sous
+Ctl + ⇧ + S : Sauvegarder tout les documents qui ont été modifiés
+Ctl + W : Ferme le document qui à le focus
+Clic Molette : Ferme l'onglet cliqué.
+Alt + F4 : Quitter
+Alt + P : Imprimer
+
+
+Clic Droit + Molette : Permet de changer de fichier (onglet) en visualisant la liste de façon claire.
+Ctrl + Tab : Avance dans la liste des fichiers ouverts.
+Ctrl + ⇧ + Tab : Recule dans la liste des fichiers ouverts.
+
+Ctrl + + / - ou Ctrl + Molette : Permet de zoomer et dézoomer sur le texte.
+
+Ctrl + Z : Annuler
+Ctrl + Y : Refaire
+
+Ctrl + C ou Ctrl + Insert : Copier
+Ctrl + V ou ⇧ + Insert : Coller
+Ctrl + X ou ⇧ + Suppr : Couper
+Suppr. : Supprimer
+Ctrl + A : Sélectionner tout
+Tab :
+		Sur un ligne : Insère un tabulation (s'il y a une sélection : remplace la sélection par la tabulation).
+		Sur sélection de plusieurs lignes : Insère un tabulation au début de chaque ligne.
+		⇧ + Tab :
+		Sur un ligne : Se déplace en arrière d'une anti-tabulation
+		Sur sélection de plusieurs lignes : Supprimer une tabulation au début de chaque ligne (si possible).
+
+Ctrl + D : Dupliquer la ligne courante ou une groupe de ligne (premier exclu, dernière inclue si incomplète)
+
+Ctrl + I : Insère un tabulation
+
+Ctrl + J : Joindre plusieurs lignes en une seule (suppression des retours de chariot)
+Ctrl + ⇧ + ↑ / ↓ : Déplacer une seule ligne dans le document (vers le haut ou le bas). Si il y a une sélection, c'est la ligne où est poser le curseur qui sera prise.
+Alt + C : Édition en mode colonne (À préciser)
+Ctrl + ⇧ + U : Passer la sélection en MAJUSCULE.
+Ctrl + U : Passer la sélection en minuscule.
+
+Ctrl + Q : Commenter une ligne (suivant le langage de programmation).
+
+Ctrl + K : Dé-commenter une ligne (suivant le langage de programmation).
+Ctrl + ⇧ + K : Commenter ou dé-commenter une ligne (suivant le langage de programmation).
+
+Ctrl + ⇧ + Q : Commenter ou dé-commenter une sélection (suivant le langage de programmation).
+
+Ctrl + Espace : Demander la complétion de fonction (si elle n'est pas automatique)
+Ctrl + Entrée : Demander la complétion de mot (si elle n'est pas automatique)
+
+Ctrl + ⇧ + Entrée : (À préciser)
+Alt puis Clic gauche : Sélection en colonne (attention de presser d'abord sur Alt)
+Non indiqués :
+
+Ctrl + L : Supprime la ligne courante
+
+Ctrl + T : Inverse deux lignes (la courante avec la précédente)
+
+Ctrl + F5 : Écrit la date (ex. : 16:18 16/11/2008)
+Plug-ins[modifier]
+Function List (version 1.x)[modifier]
+Ctrl + Alt + ⇧ + L : Affiche ou masque la liste de fonctions.
+Ctrl + Alt + Z : Pour se rendre à la fonction précédente.
+Ctrl + Alt + Y : Pour se rendre à la fonction suivante.
+
+Usage avancé : dépassez vos limites
+Recherche avancée en mode étendu
+
+
+En cochant le mode étendu, vous avez la possibilité de faire des rechercher/remplacer avancés.
+Avec un peu de matière grise vous serez en mesure de trouvez une expression régulière (que l’on appelle POSIX) pour remplacer massivement des éléments d’un texte ou d’un fichier.
+Voici quelques expressions sur lesquelles vous pouvez compter dans le module rechercher/remplacer de notepad++ en cochant mode étendu
+\t les tabulations 
+\r Les sauts de ligne 
+\x : avec x un chiffre entre 1 et 9
+\s : espace – \S: pas un espace
+\d: un nombre – \D: pas un nombre
+\u: une lettre majuscule – \U: pas une lettre majuscule
+\w: un mot
+
+
+Découvrez la liste de toutes les expressions régulières (EN)
+Le schéma type de fonctionnement d’une expression dans le module rechercher/remplacer de notepad++ en cochant expression regulieres
+
+
+ 
+Supprimer la partie numérique devant une liste 
+Rechercher : [0-9*] (.*) 
+Remplacer : \1
+([0-9*])   (.*)
+
+ ([0-9*]) fait une recherche sur n'importe quel nombre   
+ (.*)fait un e recherche sur n'importe quel caractere jusqu'à la fin de la ligne
+ 
+ ([0-9*])   (.*)
+ ([0-9*]) correspond à la premiere partie de la conditon soit \1
+ (.*) correspond à la premiere partie de la conditon soit \2
+ 
+  ([0-9*])  ([^  ])  (.*)
+  
+   ([^  ]) recherche n'importe quel caractére jusqu'au premier espace
+  
+([0-9*]) correspond à la premiere partie de la conditon soit \1
+([^ ])  correspond à la premiere partie de la conditon soit \2
+(.*) correspond à la premiere partie de la conditon soit \3
+ 
+ si on veut inverser la 3eme expression avec la premiere on fait:
+ \3\2
+ dans le module rechercher/remplacer de notepad++ en cochant expression regulieres
+ 
+ 
+ exemple:
+ 
+Inverser la partie numérique et la partie texte 
+Rechercher : ([0-9*]) (.*) 
+Remplacer : \2 \1
+
+
+ 
+Inverser la partie numérique et la partie texte 
+Rechercher : ([0-9*]) ([^ ]*) (.*) 
+Remplacer : \3,\2
+Quelques exemples
+Supprimer la partie numérique devant une liste
+Rechercher : [0-9*] (.*) 
+Remplacer : \1
+Inverser la partie numérique et la partie texte
+Rechercher : ([0-9*]) (.*) 
+Remplacer : \2 \1
+Inverser la partie numérique et la partie texte
+Rechercher : ([0-9*])([^ ]*) (.*) 
+Remplacer : \3,\2
+Remplacer tous les sauts à la lignes et retour chariot par des virgules
+Rechercher : \r\n 
+Remplacer : ,
+Rechercher Nom : Louis et remplacer par Louis
+Recherche : (.*):(.*) 
+Remplacer : \/
+Remplacer tous les doubles retours à la ligne par un retour à la ligne simple
+Rechercher : \n\n (fonctionne également avec \r\r) 
+Remplacer : \n
+
+
+Remplacer une adresse du type http://monsite.com/2017/mon-adresse-de-page par http://monsite.com/mon-adresse-de-page
+Rechercher : ([0-9]+)/(.*) 
+Remplacer : \2

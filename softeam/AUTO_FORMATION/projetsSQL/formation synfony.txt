@@ -1,0 +1,13 @@
+﻿cours symfony3
+openclassrooms
+
+En résumé page1
+
+Symfony est organisé en six répertoires : app, bin , src, var , vendor et web.
+Le répertoire dans lequel on passera le plus de temps est src, il contient le code source de notre site.
+Il existe deux environnements de travail :
+L'environnement « prod » est destiné à vos visiteurs : il est rapide à exécuter, et ne divulgue pas les messages d'erreur.
+L'environnement « dev » est destiné au développeur, c'est-à-dire vous : il est plus lent, mais offre plein d'informations utiles au développement.
+Symfony utilise l'architecture MVC pour bien organiser les différentes parties du code source.
+Un bundle est une brique de votre application : il contient tout ce qui concerne une fonctionnalité donnée. Cela permet de bien organiser les différentes parties de votre site.
+Il existe des milliers de bundles développés par la communauté, pensez à vérifier qu'il n'existe pas déjà un bundle qui fait ce que vous souhaitez faire !

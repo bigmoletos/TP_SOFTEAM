@@ -18,37 +18,11 @@
         url('../font/AmaticSC-Regular.svg#AmaticSC-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
-    font-size:20px;
-
-} 
-
-@font-face 
-{  
-    font-family: 'AmaticSC-Regular'; 
-    src: url('../font/AmaticSC-Regular.eot'); 
-    src: url('../font/AmaticSC-Regular.eot?#iefix') format('embedded-opentype'), 
-        url('../font/AmaticSC-Regular.woff') format('woff'), 
-        url('../font/AmaticSC-Regular.ttf') format('truetype'),
-        url('../font/AmaticSC-Regular.svg#AmaticSC-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
     font-size:1em;
 
 } 
 
-@font-face
-{
-    font-family: 'cac_champagnebold';
-    src: url('../font/cac_champagne-webfont.eot');
-    src: url('../font/cac_champagne-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../font/cac_champagne-webfont.woff2') format('woff2'),
-        url('../font/cac_champagne-webfont.woff') format('woff'),
-        url('../font/cac_champagne-webfont.ttf') format('truetype'),
-        url('../font/cac_champagne-webfont.svg#cac_champagnebold') format('svg');
-    font-weight: normal; 
-    font-style: italic; 
-    font-size:200%; 
-}
+
 
 
 /*font logo de fontawesome*/
@@ -56,14 +30,24 @@
     "../font/font-awesome-4.7.0/";
 } 
 
-.fa fa-phone-square{
+/*.fa fa-phone-square{
     font-size:500px; 
-    /*color: blue;*/
+    color: blue;
 }
 
 .fa fa-linkedin-square{
     font-size:500px; 
     color: blue;
+}
+
+.fa fa-envelope-square{
+ font-size:5em; 
+    color: blue;   
+}*/
+
+i{
+/*  font-size:500px; */
+    color: #2c3e50;   
 }
 
 h1{
@@ -82,8 +66,39 @@ h2{
     /* color:rgba(36, 31, 31, 0.8); */
 }
 
-h3{
+#Contact_Presentation h2{
+    font-family: 'AmaticSC-bold', Arial, serif;
+    font-style: bold;
+    font-size: 1em;
+    /* text-align:center; */
+    text-shadow: 1px 1px 0px black;
+    color:rgba(36, 31, 31, 0.8); 
+}
 
+#competences em{
+  font-family: 'AmaticSC-bold', Arial, serif;
+  font-weight: bold;
+    font-size: 1em;
+    /* text-align:center; */
+    text-shadow: 1px 1px 0px white;
+    /* color:rgba(36, 31, 31, 0.8); */  
+}
+#competences h2{
+    font-family: 'AmaticSC-bold', Arial, serif;
+    font-style: bold;
+    font-size: 1em;
+    /* text-align:center; */
+    text-shadow: 1px 1px 0px black;
+    color:rgba(36, 31, 31, 0.8); 
+    font-stretch: ultra-expanded;
+}
+
+h3{
+font-family: 'AmaticSC-bold', Arial, serif;
+    font-size: 1em;
+    /* text-align:center; */
+    text-shadow: 1px 1px 0px white;
+    /* color:rgba(36, 31, 31, 0.8); */
 }
 
 
@@ -170,7 +185,7 @@ body
 
 
 }
-
+/*couleur citation*/
 q{
     color:#34495e; 
 }
@@ -190,7 +205,7 @@ q{
     background-color: #2c3e50;
     padding:3px;
     width: 16%;
-    color: #ecf0f1;
+    color: #BAB9B9;
     float: left;
     /*gestion des cesures pour les navigateurs sauf mozilla*/
     -webkit-hyphens: auto;
@@ -218,11 +233,13 @@ q{
 
 #bloc_contact{
     /*background-color: #2c3e50;*/ 
-    color: #ecf0f1;
+    color: #BAB9B9;
     /*    padding:5px;*/
 }
 
 #bloc_contact a{
+    font-size: 14px;
+   
     color:#01A9DB;
 
 }
@@ -230,6 +247,7 @@ q{
 #bloc_presentation{
     /*background-color: #2c3e50;*/
     /*padding:5px;*/
+    color: #BAB9B9;
 }
 
 main{
@@ -369,8 +387,8 @@ footer{
     clear:both;
     width: auto; 
 
-    
- 
+
+
 
     /* ombrage */
     box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
@@ -400,7 +418,7 @@ footer a{
 
 
 @media only screen and (max-width:480px){
-    
+
     #bandeau{
         width: 100%;
     }
@@ -417,7 +435,7 @@ footer a{
         direction:ltr;
         /*grid-template-columns: repeat(auto-fill, 33%);*/
     }
-    
+
     #Contact_Presentation{
         display:block ;
         align-content: center;
@@ -430,27 +448,27 @@ footer a{
         align-content: center;
         clear: both;
     }
-    
+
     #experience{
         display: block;
         width: auto;
         align-content: center;
     }
-    
+
     #formations   {
         display: block;
         width: auto;
     }
-    
+
     #competences{
         display:block;
         width: auto;
     } 
-    
+
     progress{
         /*display: none;*/
     }
-    
+
     footer{
         width: 98.5%;
     }
@@ -466,90 +484,90 @@ footer a{
     #bandeau{
         width: 87%;
     }
-    
+
     .photo{
         /*display: inline-block;*/
         width: 130px;
         height: 150px;
     }
-    
+
     #Contact_Presentation{
         display:inline-block ;
         align-content: center;
         width: 124px
     }
-    
+
     #bloc_central{
         display: flex;
     }
-    
+
     main{
         width: 46%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     #competences{
         display: flex;
-        flex-direction: column;
+        flex-flow: column wrap;
         align-items: flex-start;
         float: right;
         width: 37%;
         flex-grow: 10;
     }
 }
-    @media only screen and (min-width:1024px){
-        /*    header, body, footer {
-                width:50%; The width is 100%, when the viewport is 800px or smaller
-        
-                max-width: 40%;
-                height: 40%;
-            }*/
-        .photo{
-            /*display: inline-block;*/
-            max-width: 30%;
-            max-height: 30%;
-            width: 220px;
-            height: 250px;
-        }
-        
-        #bandeau{
-            width: 77.5%;
-        }
-        
-        #Contact_Presentation{
-            display:inline-block ;
-            align-content: center;
-            width: 216px;
+@media only screen and (min-width:1024px){
+    /*    header, body, footer {
+            width:50%; The width is 100%, when the viewport is 800px or smaller
+    
+            max-width: 40%;
+            height: 40%;
+        }*/
+    .photo{
+        /*display: inline-block;*/
+        max-width: 30%;
+        max-height: 30%;
+        width: 220px;
+        height: 250px;
+    }
 
-        }
-        
-        #bloc_central{
-            display: flex;
-        }
+    #bandeau{
+        width: 77.5%;
+    }
 
-        main{
-            width:40%;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-        
-        #competences{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            float: right;
-            width: 37%;
-        }
-        progess{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            float: right;
-            width: 42%;
-            padding-left: 2px;
-        }
+    #Contact_Presentation{
+        display:inline-block ;
+        align-content: center;
+        width: 216px;
 
     }
+
+    #bloc_central{
+        display: flex;
+    }
+
+    main{
+        width:40%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #competences{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        float: right;
+        width: 37%;
+    }
+    progess{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        float: right;
+        width: 42%;
+        padding-left: 2px;
+    }
+
+}

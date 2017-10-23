@@ -42,7 +42,7 @@ section, div,  no #titre {
     height: 20%;*/
 
 /*margin-right:  1px;*/
-    background: url("../images/franck34.png") no-repeat center ;
+    /*background: url("../images/franck34.png") no-repeat center ;*/
    -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -50,6 +50,12 @@ section, div,  no #titre {
   position:relative;
   display: table-cell;
   vertical-align: middle;
+}
+
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 #titre{
@@ -65,7 +71,7 @@ section, div,  no #titre {
 
 #contact{
     
-    background-color:rgb(191, 191, 191);
+    background-color:rgba(206, 115, 4, 0.7);
 }
 
 i{

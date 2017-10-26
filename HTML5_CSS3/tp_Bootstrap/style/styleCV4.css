@@ -109,9 +109,7 @@ font-family:  century gothic, serif;
 
 body
 {
-   rgba(120, 129, 20, 0.10);
-    /*background-image: url('../images/fond2.png');*/
-    /*background-attachment: fixed;  Le fond restera fixe */
+ background-color:   rgba(120, 129, 20, 0.20);
 
     width:100%; 
     max-width: 1400px;

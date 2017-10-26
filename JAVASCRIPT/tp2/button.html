@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 id="t">Les anchois au sel</h1>
+        <button type="button"
+                onclick="document.getElementById('t').style.color = 'red'">
+            Appuyez!</button>
+
+        <p>**************************************</p>
+
+        <div id="d1">
+            <p id="p1">Premier paragraphe.</p>
+            <p id="p2">Second paragraphe.</p>
+        </div>
+        <script>
+            var para = document.createElement("p");//crée un element <p>
+            var node = document.createTextNode("Troisième...");//crée un noeud  texte
+            para.appendChild(node);//on donne à la balise <p> un noeud enfant
+            document.getElementById("d1").appendChild(para);
+
+        </script>
+        <p>**************************************</p>
+
+
+        <div id="d1">
+
+        </div>
+        <script>
+            function texte() {
+                var para = document.createElement("p");//crée un element <p>
+                var node = document.createTextNode("Troisième...");//crée un noeud  texte
+                para.appendChild(node);//on donne à la balise <p> un noeud enfant
+                document.getElementById("d1").appendChild(para);
+            }
+            ;
+
+        </script>
+        <button type="button" onclick="texte()"> Appuyez!</button> 
+    </body>
+</html>

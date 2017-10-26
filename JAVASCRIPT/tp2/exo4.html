@@ -93,66 +93,132 @@ and open the template in the editor.
 
         <p>*********************************************************</p>
         <p>exercice 4 jeu "devine"</p>
-        <p>  
-
-<!--            var a= nbalea(0,100);
-            i=1
-            do {
-            nb=  demander  nombre
-            si(nb==a)  fin et afficher i 
-            sinon si (nb>a)
-            afficher i+"superieur"
-            i++
-            sinon
-            afficher i+"inferieur"
-            i++
-            fin si
-            }
-            while (nb!=a)
-            while (nb!)
-
-            faire le bouton
-                        <button onclick=""> 
-                            rejouer
-                        </button>
-            reset intervalle-->
-        </p> 
-
-        <script>
+        <p> Ecrire en javascript le jeu (( devine )). Le programme choisit un nombre au
+            hasard entre 0 et 100 que l'utilisateur doit deviner en un nombre minimum de
+            coups. Pour cela, il propose des nombres et a chaque proposition le programme
+            repond si la valeur a trouver est plus petite ou plus grande. Quand la valeur est
+            trouvee, on ache dans une fen^etre le nombre de tentatives eectuees.
+            Veillez a bien decouper votre script en fonctions et a utiliser le bon format
+            de bo^te de dialogue en fonction des cas.
+            Pour la generation aleatoire, vous utiliserez la fonction :
+            //renvoie un nombre pseudo-aleatoire entre min et max
             function nbAlea(min, max) {
-                var nb = +min + (max - min + 1) * Math.random();//on rajoute un + devant le premier min pour forcer min en chiffre, car par defaut il est en string
-                return math.floor(nb);
+            var nb = min +(max-min+1)*Math.random();
+            return Math.floor(nb);
             }
+            Vous pourrez ensuite ameliorer le jeu en laissant l'utilisateur choisir l'in-
+            tervalle de la valeur, en permettant d'eectuer plusieurs parties avec le m^eme
+            intervalle, en ajoutant une gestion du meilleur score obtenu dans la serie de
+            parties et en permettant au joueur de quitter une partie en cours.
+            Pour nir, vous utiliserez vos connaissances en html et css pour ameliorer la
+            mise en page et gerer l'achage, dans un tableau par exemple, des 5 meilleurs
+            scores.</p>
 
-            var min = prompt("Quel est votre min?");
-            var max = prompt("Quel est votre max?");
-
-            var a = nbAlea(min, max);
-            i = 1;
-            nb = null;//pour etre inferieur au min dans la boucle while
-            do {
-                var nb = prompt("Quel est votre chiffre?");
-                if (nb > a) {
-                    document.write(i + "trop grand");
-                    i++;
-                } else {
-                    document.write(i + "trop petit");
-                    i++;
-                }
-            } while (nb != a)
-            {
-                if (nb == a) {
-                    document.write(i);
-                }
-
-//    
-//            while (nb!){
-//        
-//             }
+        <!--            var a= nbalea(0,100);
+                    i=1
+                    do {
+                    nb=  demander  nombre
+                    si(nb==a)  fin et afficher i 
+                    sinon si (nb>a)
+                    afficher i+"superieur"
+                    i++
+                    sinon
+                    afficher i+"inferieur"
+                    i++
+                    fin si
+                    }
+                    while (nb!=a)
+                    while (nb!)
+        
+                    faire le bouton
+                                <button onclick=""> 
+                                    rejouer
+                                </button>
+                    reset intervalle-->
 
 
-        </script>
+
+        <button  >    </button>
 
 
+        <div id="devine">
+            <table  border=1 id="tableau">
+                <tr><th>score</th></tr>
+
+            </table>
+            <button type="button"   onclick="jeuDevine()">  Rejouez! </button>
+            <button type="button"   onclick="jeuDevine()">  Quittez le jeu </button>
+        </div>
+<script>
+                    var a = null;
+                    var nb = null;
+        //            var min = prompt("Quel est votre min?");
+        //            var max = prompt("Quel est votre max?");
+function jeuDevine() {
+                    var nb = prompt("Quel est votre chiffre?");
+
+                    function nbAlea(min, max) {
+                       var nb = +min + (max - min + 1) * Math.random();//on met un plsu de vant le min pour le forcer en type entier
+                        return Math.floor(nb);
+                    }
+
+                     //var a = nbAlea(5, 12);
+                    var a = nbAlea(10, 11);
+                     // var a = nbAlea(min, max);
+                    
+                    score = 0;
+    
+var i = 1;
+                        do {
+                            if (nb > a) {
+                                var nb = prompt("votre score: " + i + "  trop grand");
+                                i++;
+                                score = i;
+                            } else {
+                                var nb = prompt("votre score: " + i + "  trop petit");
+                                i++;
+                                score = i;
+                            }
+                        } while (+nb !== a);
+
+                        if (+nb === a) {
+                            score = i;
+                         
+        //                document.write("<div><table border=1><tr><th>score</th></tr><tr> <td>"+score+"</td></tr></table> </div>");
+
+                   //10     var table = document.createElement("table"); 
+        
+                            var tr = document.createElement("tr"); 
+                         
+                            var td = document.createElement("td");                 // Crée un noeud td
+                            var texttd = document.createTextNode(i);         // Crée 
+                            
+                            td.appendChild(texttd);
+                             tr.appendChild(td);
+                            document.getElementById("tableau").appendChild(tr);
+                            document.write("super t'es un king!");
+                        } ;//fin boucle do while
+    };//fin fonction jeuDevine
+
+
+
+                //            function score() {
+                //                myArray = [i];
+                //            }
+
+                //          <div id="d1">
+                //           <p id="p1">Premier paragraphe.</p>
+                //            <p id="p2">Second paragraphe.</p>
+                //        </div>//
+                //         <script>
+                //            var para = document.createElement("p");//crée un element <p>
+                //            var node = document.createTextNode("Troisième...");//crée un noeud  texte
+                //            para.appendChild(node);//on donne à la balise <p> un noeud enfant
+                //            document.getElementById("d1").appendChild(para);
+                //
+
+
+
+                </script>
     </body>
 </html>

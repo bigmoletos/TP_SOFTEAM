@@ -51,7 +51,7 @@ i{
 }
 
 h1{
-    font-family:  century gothic, serif;
+    font-family:  Arial, serif;
     font-size: 2em;
     /* text-align:center; */
     /*text-shadow: 2px 2px 0px white;*/
@@ -59,7 +59,7 @@ h1{
 }
 
 h2{
-    font-family:  century gothic, serif;
+    font-family:  Arial, serif;
     font-size: 1em;
     /* text-align:center; */
     /*text-shadow: 1px 1px 0px white;*/
@@ -67,7 +67,7 @@ h2{
 }
 
 #Contact_Presentation h2{
-    font-family:  century gothic, serif;
+    font-family:  Arial, serif;
     font-style: bold;
     font-size: 1em;
     /* text-align:center; */
@@ -75,9 +75,8 @@ h2{
     color:rgba(36, 31, 31, 0.8); */
 }
 
-
 #competences em{
-  font-family:  century gothic, serif;
+  font-family:  Arial, serif;
   font-weight: bold;
     font-size: 1em;
     /* text-align:center; */
@@ -85,8 +84,8 @@ h2{
     /* color:rgba(36, 31, 31, 0.8); */  
 }
 #competences h2{
-    font-family:  century gothic, serif;
-    /*font-style: bold;*/
+    font-family:  Arial, serif;
+    font-style: bold;
     font-size: 1em;
     /* text-align:center; */
 /*    text-shadow: 1px 1px 0px black;
@@ -95,7 +94,7 @@ h2{
 }
 
 h3{
-font-family:  century gothic, serif;
+font-family:  Arial, serif;
     font-size: 1em;
     /* text-align:center; */
     /*text-shadow: 1px 1px 0px white;*/
@@ -109,12 +108,12 @@ font-family:  century gothic, serif;
 
 body
 {
-   rgba(120, 129, 20, 0.10);
+    background-color:#F3F1F1;
     /*background-image: url('../images/fond2.png');*/
     /*background-attachment: fixed;  Le fond restera fixe */
 
     width:100%; 
-    max-width: 1400px;
+    max-width: 100%;
     height: auto;
 
     width:100%;
@@ -148,11 +147,11 @@ body
 
 #bandeau{
     display: inline-block;
-    padding-left: 10px;
+    padding-left: 1px;
     align-items: center;
     margin-left: 3px;
     width: 77%;
-    background-color: rgba(120, 129, 20, 0.26);
+    background-color: #3ed3dc;
     /*background: radial-gradient(circle at top right, white, #95a5a6);*/
     /*background-image: url("../images/snow.png");*/
 
@@ -203,7 +202,7 @@ q{
 }
 
 #Contact_Presentation{
-    background-color: rgba(120, 129, 20, 0.56);
+    background-color: #84A6A2;
     padding:3px;
     width: 16%;
     color: #141415;
@@ -256,11 +255,9 @@ main{
     display: block;
     padding: 3px;
     float:left;
+    width:50%;
     margin-left: 3px;
-    font-family:  century gothic, serif;
-    font-size: 1em;
 
-    
     /*gestion des cesures pour les navigateurs sauf mozilla*/
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -302,7 +299,7 @@ main{
 
 #competences{
     display: inline-block;
-    background-color: rgba(120, 129, 20, 0.76);
+    background-color: #84A6A2;  
     padding-left: 1px;
     float: left;
     width:37%;
@@ -448,7 +445,7 @@ footer a{
 
     #main{
         display: flex;
-        width: 100%;
+        width: auto;
         align-content: center;
         clear: both;
     }

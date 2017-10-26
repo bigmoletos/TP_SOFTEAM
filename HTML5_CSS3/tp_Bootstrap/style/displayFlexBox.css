@@ -1,0 +1,129 @@
+﻿#conteneurs
+{
+    display:flex; /*permet aux  blocs d'avoir la meme hauteur que le plus grande*/
+    flex-direction:column;	/*pour les remettre en colonne*/
+    flex-direction:row-column;/*pour inverser l'ordre des blocs de la colonne*/
+    flex-wrap:wrap;/*s'ajuste automatiquement à la taille de l'ecran si pas assez deplace en largeur alors il mettra les blocs en colonne et non les uns à cotes des autres*/
+    display:flex;
+    justify-content:	flex-start; /*les blocs sont alignés au début*/
+    justify-content:	flex-end;/*les blocs sont alignés à la fin*/
+    justify-content:	center;/*les blocs sont centrés*/
+    justify-content:	space-between;	/*les blocs sont justifiés sur toute la largeur mais laisse des espaces entre les blocs */
+    justify-content:	space-around;	/*les blocs sont justifiés sur toute la largeur mais laisse des espaces entre les blocs et sur les bords*/
+
+    /*pour le moment l'alignement se faisiait sur l'axe principal (ici horizontal), on peut aussi le faire sur un axe secondaire*/
+    height:200px;/*ici on définit l'axe secondaire, celui du bas*/
+
+    align-items:stretch;/* les  elements sont etirés sur tout l'axe*/
+    align-items:flex-start;/* les  elements sont alignés au début*/
+    align-items:center;/*  les  elements sont alignés au centre*/
+    align-items:flex-end;/*  les  elements sont alignés a la fin*/
+    align-items:baseline;/*  les  elements sont alignés sur une ligne de base*/
+    align-items:space-between;/*  les  elements sont justifiés sur toute la largeur avec des espaces entre les blocs*/
+    align-items:space-around;/*  les  elements sont justifiés sur toute la largeur avec des espaces entre les blocs et aussi sur les bords*/
+    /* il faut l'associer avec une : */
+    margin:auto; /*dans chacun des blocs*/
+
+    /* On peut changer l'ordre des blocs avec un order tous les blocs */
+    order:3;
+    /* rajouter :nth-child(numero de l'element à choisir dans le code) */
+}
+
+/* h1 */
+/* { */
+	
+/* pour rajouter des bordures identiques*/
+/* border: 3px blue solid; */
+
+/* pour rajouter des bordures differentes*/
+
+/* border-left: 2px solid black; */
+/* border-right: 2px solid black; */
+
+
+/* forme de l'arrondi des coins */
+/* border-radius: 10px; */
+/* forme de l'arrondi des coins */
+/* border-radius: 10px 5px 10px 5px; */
+/* forme d'arrondi eliptique des coins */	
+/* border-radius: 20px / 10px; */
+
+/* ombre directement sur les lettres du texte */
+/* text-shadow: 25px 2px 4px grey; */
+/* ombre placée à l'interieur du bloc du texte 	 */
+/* box-shadow: 6px 6px 6px black inset; */
+
+/* applique la couleur rouge  */
+/* color:black; */
+/* (to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 55%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); */
+	
+	
+/* double la taille dela police et centre le texte */
+/* font-size: 2em; */
+/* text-align:center; */
+
+/* } */
+
+/* * font-family: serif - sans-serif - monospace - cursive - fantasy */
+						/* * Verdana - Times - Helvetica - Arial - Arial Nerrow - ... */
+
+/* * font-style: 	 normal - italic - oblique */
+
+/* * font-variant:  normal - small-caps */
+
+/* * font-weight:   100 - 200 - 300 - 400 - 500 - 600 - 700 - 800 - 900 */
+							/* * Normal - bold - bolder - lighter */
+
+/* * font-size:  30pt - 30px - 1cm - 200% */
+						/* * xx-large - x-large - large - medium - small - x-small - xx-small */
+						/* * larger - smaller */
+
+/* * font: Cette propriété permet de définir en une seule fois toutes les propriétés de font. */
+
+/* * font:15px/18px Times bold italique */
+/* * font:Arial, Verdana 100%/120% italique */
+
+/* * text-decoration: none, underline */
+
+/* * text-transform: uppercase, lowercase, capitalize */
+
+/* * text-align:left, right, center, justify, super */
+
+/* * text-indent:10%, 10pt */
+
+
+/* Le positionnement inline-block */
+
+/* display:inline-block; */
+/* Les manipulations que demande le positionnement flottant se révèlent parfois un peu délicates sur des sites complexes.  */
+/* Dès qu'il y a un peu plus qu'un simple menu à mettre en page,  */
+/* on risque d'avoir à recourir à des clear: both; qui complexifient rapidement le code de la page. */
+
+/* Une meilleure technique consiste à transformer vos éléments en inline-block avec la propriété display. */
+
+/* Quelques petits rappels sur les éléments de type inline-block : */
+
+/* •Ils se positionnent les uns à côté des autres  */
+/* (exactement ce qu'on veut pour placer notre menu et le corps de notre page !). */
+
+/* •On peut leur donner des dimensions précises  */
+/* (là encore, exactement ce qu'on veut !). */
+
+/* Nous allons transformer en inline-block les deux éléments que nous voulons placer côte à côte : le menu de navigation et la section du centre de la page. */
+/* css */
+/* nav */
+/* {  */
+/* display: inline-block; */
+/* width: 150px; */
+/* border: 1px solid black; */
+/* } */
+
+/* vertical-align: */
+/* Cette propriété permet de modifier l'alignement vertical des éléments.  */
+/* Voici quelques-unes des valeurs possibles pour cette propriété : */
+
+/* baseline : aligne de la base de l'élément avec celle de l'élément parent (par défaut) ; */
+/* top : aligne en haut ; */
+/* middle : centre verticalement ; */
+/* bottom : aligne en bas ; */
+/* (valeur en px ou %) : aligne à une certaine distance de la ligne de base (baseline). */

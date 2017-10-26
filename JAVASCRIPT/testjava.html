@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+            for (var cpt = 0; cpt < 4; cpt++) {
+                console.log("Compteur: " + cpt);
+            }
+        </script>
+
+        <script>
+            var tab = ["a", "b", null]
+                    ;
+            for (let valeur of tab) {
+                console.log("valeur : " + valeur)
+            }
+        </script>
+
+
+
+        <script>
+            for (var i = 0; i < 10; i++) {
+                if (i == 3) {
+                    break;
+                }
+                console.log("compteur: " + i);
+            }
+
+        </script>
+
+        <script>
+            for (var i = 0; i < 10; i++) {
+                if (i == 3) {
+                    continue;
+                }
+                console.log("compteur: " + i);
+            }
+
+        </script>
+
+        <script>
+            var obj = {
+                attribut0: "a",
+                attribut1: 2.5,
+                attribut: 16
+            };
+            console.log(obj["attribut0"])
+            obj["attribut0"] = 154
+            console.log(obj["attribut0"])
+        </script> 
+
+        <script>
+            console.log(obj["attribut0"])
+            obj.attribut1 = "texte";
+            console.log(obj.attribut1)
+
+
+        </script>
+        <script>
+            var obj = {
+
+                attribut: "a",
+
+                methode0: function () {
+
+                    console.log("méthode0 appelé");
+
+                },
+
+                methode1: function () {
+                    console.log("méthode1 appelé");
+                },
+
+                methode2: function () {
+                    console.log("méthode2 appelé");
+
+                    this.methode0();
+//appel de la méthode avec le mot clé 
+                    obj.methode1();
+// appel de la méthode avec le nom de l'objet
+
+
+                    console.log(obj.attribut);
+                },
+            };
+            obj.methode2();
+        </script>
+
+
+        <script>
+try {
+console.log(d); //Cette variable est inexistante
+} catch(error) {
+console.log("Une exception a été attrapée");
+console.log("Nom de l'exception :" + error.name);
+console.log("Message de l'exception :" + error.message);
+} finally {
+console.log("S'affichera avec ou sans exception");
+}
+
+
+        </script>
+
+        <script>
+
+
+
+
+
+        </script>
+
+        <script>
+
+
+
+        </script>
+
+
+
+        <div>TODO write content</div>
+    </body>
+</html>

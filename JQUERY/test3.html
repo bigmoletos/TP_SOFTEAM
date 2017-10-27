@@ -1,0 +1,52 @@
+tes<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/css1.css"  type="text/css" charset="utf_8"/>
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <div id="but">Mission JOUR NUit</div>
+        <button type="button" id="bouton" >interrupteur</button>
+
+        <h1> JOUR</h1>
+        <div> au top </div>
+        <ul>
+            <li>moutarde</li>
+             <li>champignons</li>
+             <li>carottes --></li>
+        </ul>
+        
+        <script>
+//<![CDATA[
+            $(document).ready(function () {
+                // $('input[name=bouton]')
+                $("#bouton").click(function () {
+                    var text = $("h1").text();
+                    var text2 = $("#button").text();
+                    $("h1").text(text === "JOUR!" ? "NUIT" : "JOUR!");
+                    $("#button").text(text === "JOUR!" ? "NUIT" : "JOUR!");
+                    $("#button").toggleClass("nuit");
+
+
+                });
+
+// Mon code JQuery
+            });
+//]]>
+        </script>
+
+
+
+
+    </body>
+</html>

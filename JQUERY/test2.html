@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="style/css1.css"  type="text/css" charset="utf_8"/>
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <input type="text" name="phoneNumber"> 
+        <h1> beau titre h1</h1>
+        <div> hh </div>
+        <script>
+//<![CDATA[
+            $(document).ready(function () {
+                $('input[name=phoneNumber]')
+                        .after('<div class="error"></div>')
+                        .addClass('control phoneNumber')
+                        .attr('maxlength', 10)
+                        .focus(alert("l'entrée est limitée à 10 chiffres "));
+// Mon code JQuery
+            });
+//]]>
+        </script>
+
+        
+        <button type="button" onclick="">bouton jour nuit</button>
+        
+    </body>
+</html>

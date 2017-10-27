@@ -1,0 +1,12 @@
+body{
+/*    background-color: #31708f;
+    color: #ce8483;*/
+}
+
+encadrer{
+    display:inline ; 
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+    border: 2px solid red;
+}

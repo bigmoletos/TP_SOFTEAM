@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/css2.css"  type="text/css" charset="utf_8"/>
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <div id="premier">exo3 slide26</div>
+        <p>Grace à la fonction siblings faire un encadré de 2 pixels en rouge sur le dernier
+            paragraphe et le titre. Les encadrés devront faire la largeur du contenu et pas
+            la largeur de la page (display sera donc inline).
+            display:inline;
+            ● border-style: solid;
+            border-color: red;
+            border-width: 2px;
+            ● border: 2px solid red;</p>
+        <h1>Titre</h1>
+        <div class="about">
+            <strong>Adipiscing elit.</strong>
+            <div>
+                Lorem ipsum dolor sit amet, <strong>consectetur</strong>
+            </div>
+        </div>
+        <p>
+            Nulla pellentesque <em>molestie</em> tempus. <strong>Curabitur</strong>
+            turpis est.
+        </p>
+        
+          <div id="top"> au top </div>
+        <ul >
+            <li>moutarde</li>
+            <li>champignons</li>
+            <li>carottes</li>
+        </ul>
+        
+        <script>
+            //<![CDATA[
+            $(document).ready(function () {
+                $(".about").siblings().each(function () {
+                    $(this).css({
+                        "border": "2px red solid",
+                        "display": "inline"
+                    });
+                });
+         //   });
+            //]]>//autre version avec end mais sur h1 et non div
+
+            $("h1").siblings().each(function () {
+                $(this).css({
+                    "border": "1px blue solid",
+                    "display": "inline"
+                })
+                        .end().siblings().each(function () {
+                    $(this).css({
+                        "border": "3px blue solid",
+                        "display": "inline"
+                    });
+
+                });
+            });
+           // $("<div/>");
+          //  $("<div/>");
+            $(".about").append("<p><strong>Test le titus des iles  gothiques to append </strong></p>" );
+            $("<p><strong>Test le titus des glandons avec appendTo </strong></p>").appendTo("#premier");
+            $( "#premier" ).prepend( "<p>Test un prepend champignon</p>" );
+            $( "#premier"  ).after( $( "<p>Test un  champignon et du after</p>" ) );
+             $( "#premier"  ).before( $( "<li>Test un  champignon et du before</li>" ) );
+            $( "#top").remove();
+            $("body").hide(7000);
+            $("body").show(7000);
+            
+            
+            
+            });//fin de $(document).ready
+            
+            
+            
+        </script>
+
+
+
+
+    </body>
+</html>

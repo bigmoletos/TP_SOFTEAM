@@ -44,7 +44,7 @@ and open the template in the editor.
 
             $(document).ready(
                     function () {
-                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="ex: ranger les cafards dans la boite à sucre">Ajouter une nouvelle tache<button type="button" id="bouton" >+</button>');
+                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="Nouvelle Tache"><button type="button" id="bouton" >+</button>');
                         $('#bouton').click(
                                 function () {
                                     var toAdd = $('input[name=ajout]').val();
@@ -55,6 +55,7 @@ and open the template in the editor.
 //                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
 //                           // }
 //                        });
+
                         $("#ajout").click(function (event) {
                             if (event.keyCode === 10) {//limitation à 10 taches
                                 $("#bouton").keyup();//avec .click ne fonctionne pas ici
@@ -64,13 +65,14 @@ and open the template in the editor.
                         $(document).on('click', 'li', function () {
                             $(this).toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
                         });
-
-                        $(document).on('click', '#sup', function () {
-                            $(this).fadeOut('slow'); //pour supprimer totalement la ligne
+                        //pour supprimer la tache
+                         $(document).on('click', '#sup', function () {
+                          $(this).parent().fadeOut('slow');   
                         });
-
+                                                
+                        //pour vider la zone de texte
                         $('input').focus(function () {
-                            $(this).val('');//pour vider la zone de texte
+                            $(this).val('');
                         });
 
                         //     $('ul').sortable();

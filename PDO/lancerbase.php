@@ -7,10 +7,10 @@
  */
 
 
-$bdd = "cafe";
+$bdd = "news";
 $utilisateur = "root";
-$motdepasse = "root";
-$serveur = "localhost";
+$motdepasse = "";
+$serveur = "localhost:8888";
 $driver = "mysql:host=$serveur;dbname=$bdd";
 
 //$connexion=new PDO($driver, $utilisateur, $motdepasse);

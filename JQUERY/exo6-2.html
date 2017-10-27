@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+        <style>
+            h1{text-align: center;}
+            ul, li{padding:0;}
+            ul{list-style-type: none;}
+            li{border: 1px black solid; margin: 0 auto 10px; max-width: 400px;}
+            .checked{text-decoration: line-through;}
+        </style>
+    </head>
+    <body>
+        <h1>TODO LIST</h1>
+        <form name="todo">
+            <ul>
+                <li><input type="checkbox">Acheter du pain<button type="button" id="del">X</button></li>
+                <li><input type="checkbox">Acheter du vin<button type="button" id="del">X</button></li>
+                <li><input type="text" /><button type="button" id="add">+</button></li>
+            </ul>
+        </form>
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", "input:checkbox", function(){
+                    $(this).parent().toggleClass("checked");
+                });
+                
+                
+                $("button#add").on("click", function(){
+                    var text = $(this).siblings("input").val();
+                    $(this).parent().before('<li><input type="checkbox">'+text+'<button type="button" id="del">X</button></li>');
+                    $(this).siblings("input").val("");
+                });
+                
+                
+                
+                $(document).on("click", "button#del", function(){
+                    $(this).parent().remove();
+                });
+            });
+            </script>
+            
+    </body>
+</html>

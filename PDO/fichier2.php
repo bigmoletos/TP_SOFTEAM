@@ -1,10 +1,10 @@
 <?php
 
-		$serveur="localhost";
+		$serveur="localhost:8888";
 		$login="root";
 		$pass="";
 		
-		$bdd="location";//nom dela base de données
+		$bdd="";//nom dela base de données
 		$table="inscrit";//nom de la table
 // nom des colonnes		
 		$col1="id";//"nb";

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/css3.css"  type="text/css" charset="utf_8"/>
+        <script src="jquery-3.2.1.min.js"></script>
+        <style>
+            h1{text-align: center;}
+            ul, li{padding:0;}
+            ul{list-style-type: none;}
+            li{border: 1px black solid; margin: 0 auto 10px; max-width: 400px;}
+        </style>
+    </head>
+    <body>
+        <h1>TODO LIST</h1>
+        <form name="todo">
+            <ul>
+                <!--                <li><input type="checkbox">Acheter du pain</li>
+                                <li><input type="checkbox">Acheter du vin</li>-->
+            </ul>
+            <!--<button type="button" id="bouton" >+</button>-->
+        </form>
+
+
+        <script>
+
+//            $(document).ready(function () {
+//                //  $("input[name=todo]").
+//                //  $("h1").siblings().each(function () {
+//                $("ul").append('<li><input type="text" id="ajout">Ajouter une nouvelle tache<button type="button" id="bouton" >+</button></li>');
+//                $("#ajout").bind("click", function () {
+//
+//                });//fin bind
+//
+//            });//fin de $(document).ready
+
+
+            $(document).ready(
+                    function () {
+                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="ex: ranger les cafards dans la boite à sucre">Ajouter une nouvelle tache<button type="button" id="bouton" >+</button>');
+                        $('#bouton').click(
+                                function () {
+                                    var toAdd = $('input[name=ajout]').val();
+                                    $("ul").append('<li><input type="checkbox">' + toAdd + '<button type="button" id="sup" >x</button></li>');
+                                });
+//                        $("input[name=ajout]").click(function (event) {
+//                          //  if (event.keyCode === 13) {
+//                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
+//                           // }
+//                        });
+                        $("#ajout").click(function (event) {
+                            if (event.keyCode === 10) {//limitation à 10 taches
+                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
+                            }
+                        });
+                        //pour barrer le texte
+                        $(document).on('click', 'li', function () {
+                            $(this).toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
+                        });
+
+                        $(document).on('click', '#sup', function () {
+                            $(this).fadeOut('slow'); //pour supprimer totalement la ligne
+                        });
+
+                        $('input').focus(function () {
+                            $(this).val('');//pour vider la zone de texte
+                        });
+
+                        //     $('ul').sortable();
+
+                    }
+            );
+
+
+
+        </script>
+
+    </body>
+</html>

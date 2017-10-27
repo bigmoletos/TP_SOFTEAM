@@ -1,6 +1,6 @@
 body{
-/*    background-color: #31708f;
-    color: #ce8483;*/
+    /*    background-color: #31708f;
+        color: #ce8483;*/
 }
 
 encadrer{
@@ -10,3 +10,19 @@ encadrer{
     border-width: 2px;
     border: 2px solid red;
 }
+
+
+button{
+    background-color: #cfdde4;
+    color: #2b753e;
+    height: 3em;
+    font-family: fantasy;
+
+}
+
+#ajout{
+    text-align:right;
+
+}
+
+.strike{text-decoration: line-through;}

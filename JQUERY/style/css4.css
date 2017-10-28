@@ -1,0 +1,148 @@
+
+
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);*/
+
+
+#ajout{
+    text-align:right;
+
+}
+html, section {
+    border: 2px burlywood solid;
+    padding:5px;
+}
+
+h1{text-align: center;}
+
+ul, li{padding:0;}
+
+ul{list-style-type: none;}
+
+li{border: 1px black solid; margin: 0 auto 10px; max-width: 400px;}
+
+.checked{text-decoration: line-through;}
+
+body {
+    background-color: #31708f;
+    color: #ce8483;
+    border: 2px burlywood solid;
+    font: normal normal 13px/16px "Open Sans", sans-serif;
+    background: #dfdfdf;
+
+}
+
+.container{
+    padding: 5px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: white;
+    border-radius: 5px;}
+
+form {
+    display: inline-block;
+}
+
+input{
+    padding: 4px 15px 4px 5px;
+}
+
+#bouton{
+    display: inline-block;
+    background-color:#12bb2e;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:center;
+    margin-top:2px;
+    padding: 5px 15px;
+}
+
+#sup{
+    display: inline-block;
+    background-color:#fc999b;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:right;
+    margin-top:2px;
+    padding: 5px 15px;
+}
+
+
+
+#bouton:hover{
+    cursor: pointer;
+    opacity: .8;}
+
+ul {padding-left: 20px;}
+
+ul li {padding: 5px;color:#000;}
+
+ul li:nth-child(even){background: #dfdfdf;}
+
+
+/*pour rayer le texte*/
+.strike{
+    text-decoration: line-through;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+.container{
+    padding: 5px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: white;
+    border-radius: 5px;}
+
+form {
+    display: inline-block;
+}
+
+input{
+    padding: 4px 15px 4px 5px;
+}
+
+#bouton{
+    display: inline-block;
+    background-color:#12bb2e;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:center;
+    margin-top:2px;
+    padding: 5px 15px;
+}
+
+#sup{
+    display: inline-block;
+    background-color:#fc999b;
+    color:#ffffff;
+    border-radius: 5px;
+    text-align:right;
+    margin-top:2px;
+    padding: 5px 15px;
+}
+
+
+
+#bouton:hover{
+    cursor: pointer;
+    opacity: .8;}
+
+ul {padding-left: 20px;}
+
+ul li {padding: 5px;color:#000;}
+
+ul li:nth-child(even){background: #dfdfdf;}
+
+
+/*pour rayer le texte*/
+.strike{
+    text-decoration: line-through;
+}
+
+li:hover{
+    cursor: pointer;
+}

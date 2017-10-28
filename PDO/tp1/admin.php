@@ -116,9 +116,9 @@ function saveUpdate($manager)
                  !isset($_GET['id']) ? $id=10:  $id=$_GET['id'];// ternaire
                   $news=$manager->Load($id);
                   $id= $news->getId();
-                //   var_dump($id);
+                   var_dump($id);
                   // echo $auteur;
-                  return $id;
+                //  return $id;
          }
          // echo id($manager);
           //var_dump($id);

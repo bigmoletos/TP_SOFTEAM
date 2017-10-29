@@ -10,170 +10,176 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style/css4.css"  type="text/css" charset="utf_8"/>
-        <script src="jqueryFiles/jquery-3.2.1.min.js"></script>
-        
+        <script src="jqueryFiles/jquery-3.2.1.js"></script>
+        <style>
+           
+        </style>
     </head>
     <body>
         <h1>TODO LIST</h1>
         <form name="todo">
-            <ul>
-<!--                <li><input type="checkbox">Acheter du pain<button type="button" id="del">X</button></li>
-                <li><input type="checkbox">Acheter du vin<button type="button" id="del">X</button></li>-->
+            <ul id="liste">
+                <!--                <li><input type="checkbox">Acheter du pain<button type="button" id="del">X</button></li>
+                                <li><input type="checkbox">Acheter du vin<button type="button" id="del">X</button></li>-->
                 <!--<li><input type="text" /><button type="button" id="add">+</button></li>-->
             </ul>
         </form>
-        
+
         <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+    <!--
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+    -->
 
 
-        <section class="row">
-            <div class="col-md-3" id="photocontainer"><div id="photo"></div></div>
-            <div class="col-md-6" id="titre">
-                <h1>Franck Kinanveut</h1> 
-                <p></p>
-                <h2> Développeur Web technico-fonctionnel </h2>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p> <q> Il n'existe rien de constant, si ce n'est le changement. </q></p><p>Bouddha  </p> 
-            </div>  
+    <section class="row">
+        <div class="col-md-3" id="photocontainer"><div id="photo"></div></div>
+        <div class="col-md-6" id="titre">
+            <h1>Franck Kinanveut</h1> 
+            <p></p>
+            <h2> Développeur Web technico-fonctionnel </h2>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p> <q> Il n'existe rien de constant, si ce n'est le changement. </q></p><p>Bouddha  </p> 
+        </div>  
 
 
-            <div class="col-md-3" id="contact">     <h2>Contactez-moi</h2>
-                <p>  Marié, 2 enfants </p>                                 
+        <div class="col-md-3" id="contact">     <h2>Contactez-moi</h2>
+            <p>  Marié, 2 enfants </p>                                 
 
-                <a href="tel:+33663748518"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> </a> 06 63 74 85 18  
-                <p>                                    
-                </p>   <a href="mailto:kinanveut@gmail.com.fr" ><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i></a> kinanveut@gmail.com   
-                <p></p>
+            <a href="tel:+33663748518"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> </a> 06 63 74 85 18  
+            <p>                                    
+            </p>   <a href="mailto:kinanveut@gmail.com.fr" ><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i></a> kinanveut@gmail.com   
+            <p></p>
 
-                <a href="https://fr.linkedin.com/in/fKinanveut" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i> </a>     
-                <a href="https://github.com/bigmoletos/" ><i class="fa fa-github fa-2x" aria-hidden="true"></i></a> 
-            </div>
-        </section>
+            <a href="https://fr.linkedin.com/in/fKinanveut" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i> </a>     
+            <a href="https://github.com/bigmoletos/" ><i class="fa fa-github fa-2x" aria-hidden="true"></i></a> 
+        </div>
+    </section>
 
-        <section class="row">
-            <div class="col-md-12" id="presentation">       
-                <p><strong> En tant que manager-coach, je fixe un cadre structurant dans lequel je cultive une ambiance bienveillante, afin de 
+    <section class="row">
+        <div class="col-md-12" id="presentation">       
+            <p><strong> En tant que manager-coach, je fixe un cadre structurant dans lequel je cultive une ambiance bienveillante, afin de 
                     créer un climat propice à l'initiative, à l'agilité et à l'épanouissement.</strong>
 
-                </p>
-            </div> 
-        </section>
-        <section class="row">
-            <div class="col-md-6" id="hard"><header><h2>Savoir Faire</h2></header>
-                <div class="row">
-                  <p>  <strong>Management collaboratif</strong>  
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>Commercial, fidélisateur</strong>      
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>Langages : </strong> HTML5, CSS3, PHP, Javascript, JQuery    
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>IDE & serveur :</strong> NetBeans IDE   
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>SGBD :</strong> SQL, MySQL   
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>Environnement :</strong> Unix, Windows   
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>Conceptualisation :</strong> UML  
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>Versionning :</strong> Git, GitHub  
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    <p><strong>Framework :</strong>Bootstrap, Symfony 
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
+            </p>
+        </div> 
+    </section>
+    <section class="row">
+        <div class="col-md-6" id="hard"><header><h2>Savoir Faire</h2></header>
+            <div class="row">
+                <p>  <strong>Management collaboratif</strong>  
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>Commercial, fidélisateur</strong>      
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>Langages : </strong> HTML5, CSS3, PHP, Javascript, JQuery    
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>IDE & serveur :</strong> NetBeans IDE   
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>SGBD :</strong> SQL, MySQL   
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>Environnement :</strong> Unix, Windows   
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>Conceptualisation :</strong> UML  
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>Versionning :</strong> Git, GitHub  
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                <p><strong>Framework :</strong>Bootstrap, Symfony 
+                    <i class="fa fa-star" aria-hidden="true"></i>
             </div>
-            <div class="col-md-6" id="soft"> <header><h2>Savoir Être</h2></header>
-                <p><i class="fa fa-check" aria-hidden="true">  </i> Empathie, Écoute</p>
-            </div>
-            <!--</div>-->
-        </section> 
+        </div>
+        <div class="col-md-6" id="soft"> <header><h2>Savoir Être</h2></header>
+            <p><i class="fa fa-check" aria-hidden="true">  </i> Empathie, Écoute</p>
+        </div>
+        <!--</div>-->
+    </section> 
 
 
-        <section class="row">
-            <div class="col-md-6" id="experience"><h2>Expériences Professionnelles</h2>
-                <ul id="liste_experience">
+    <section class="row">
+        <div class="col-md-6" id="experience"><h2>Expériences Professionnelles</h2>
+            <ul id="liste_experience">
 
-                    <li><strong>Coach</strong>  en management 2006-2017 </li>
-                </ul>	
-            </div>
-            <div class="col-md-6" id="formation"><h2>Formations</h2>
-                <ul id="liste_Formations">
+                <li><strong>Coach</strong>  en management 2006-2017 </li>
+            </ul>	
+        </div>
+        <div class="col-md-6" id="formation"><h2>Formations</h2>
+            <ul id="liste_Formations">
 
-                </ul>
-            </div>
-        </section>
+            </ul>
+        </div>
+    </section>
 
-        <section class="row">
-            <div class="col-md-8" id="veille">
-                <header><h2>Réalisations - Veilles Technologique</h2></header>
-                <h3>Management - Commercial</h3>
-                <ul><li> Accompagnement du changement en Entreprise </li>
-                </ul >
-                <h3>Digital</h3>
-                <ul id="digi"> 
-                    <li>Openclassrooms<ul>
-                            <li>UML</li>
-                            <li>HTML5-CSS3</li>
-            </div>
-            <!--             </section>
-                    
-                        <section class="row">-->
-            <div class="col-md-4" id="loisir">
-                <header><h2>Centres d'intérêts</h2></header>
-                <ul>
-                </ul>
+    <section class="row">
+        <div class="col-md-8" id="veille">
+            <header><h2>Réalisations - Veilles Technologique</h2></header>
+            <h3>Management - Commercial</h3>
+            <ul><li> Accompagnement du changement en Entreprise </li>
+            </ul >
+            <h3>Digital</h3>
+            <ul id="digi"> 
+                <li>Openclassrooms<ul>
+                        <li>UML</li>
+                        <li>HTML5-CSS3</li>
+                        </div>
+                        <!--             </section>
+                                
+                                    <section class="row">-->
+                        <div class="col-md-4" id="loisir">
+                            <header><h2>Centres d'intérêts</h2></header>
+                            <ul>
+                            </ul>
 
-            </div>
-        </section> 
+                        </div>
+                        </section> 
 
 
-        <script>
-           $(document).ready(
-                    function () {
-                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="Nouvelle Tache"><button type="button" id="bouton" >+</button>');
-                        $('#bouton').click(
-                                function () {
-                                    var toAdd = $('input[name=ajout]').val();
-                                    $("ul").append('<li><input type="checkbox">' + toAdd + '<button type="button" id="sup" >x</button></li>');
-                                });
-//                        $("input[name=ajout]").click(function (event) {
-//                          //  if (event.keyCode === 13) {
-//                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
-//                           // }
-//                        });
+                        <script>
+                            $(document).ready(
+                                    function () {
+                                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="Nouvelle Tache"><button type="button" id="bouton" >+</button>');
+                                        $('#bouton').click(
+                                                function () {
+                                                    var toAdd = $('input[name=ajout]').val();
+                                                    $("#liste").append('<li><input id="check"  type="checkbox">' + toAdd + '<button type="button" id="sup" >x</button></li>');
+                                                });
+                                        //                        $("input[name=ajout]").click(function (event) {
+                                        //                          //  if (event.keyCode === 13) {
+                                        //                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
+                                        //                           // }
+                                        //                        });
 
-                        $("#ajout").click(function (event) {
-                            if (event.keyCode === 10) {//limitation à 10 taches
-                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
-                            }
-                        });
-                        //pour barrer le texte
-                        $(document).on('click', 'li', function () {
-                            $(this).toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
-                        });
-                        //pour supprimer la tache
-                         $(document).on('click', '#sup', function () {
-                          $(this).parent().fadeOut('slow');   
-                        });
-                                                
-                        //pour vider la zone de texte
-                        $('input').focus(function () {
-                            $(this).val('');
-                        });
-                           $("h1, h2, h3").bind("click", function(){
-                           $(this).fadeOut('slow');  });
-                             $("h1, h2, h3").animate({
-                          width:"10245px", background: "#dfdfee", opacity:0.2, height:"20px",   }, 6000);
-                        //     $('ul').sortable();
-                    });//fin document ready
-            
-            </script>
-            
-    </body>
-</html>
+                                        $("#ajout").click(function (event) {
+                                            if (event.keyCode === 10) {//limitation à 10 taches
+                                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
+                                            }
+                                        });
+                                        //pour barrer le texte
+                                        $(document).on('click', '#check', function () {
+                                            $(this).toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
+                                        });
+                                        //pour supprimer la tache
+                                        $(document).on('click', '#sup', function () {
+                                            $(this).parent().fadeOut('slow');
+                                        });
+
+                                        //pour vider la zone de texte
+                                        $('input').focus(function () {
+                                            $(this).val('');
+                                        });
+                                        $("h1, h2, h3").bind("click", function () {
+                                            $(this).fadeOut('slow');
+                                        });
+
+                                        $(document).bind("click", function () { $("li").animate({background: " #28a565", border: "15px", borderleftcolor: " #28a565"}, {queue: false, duration: 3000});
+                                                $("h1, h2, a").animate({
+                                            width: "600px", background: "#dfdfee", opacity: 0.2, height: "20px" }, 6000);
+                                    });
+        //     $('ul').sortable();
+                                    });//fin document ready
+
+                        </script>
+
+                        </body>
+                        </html>

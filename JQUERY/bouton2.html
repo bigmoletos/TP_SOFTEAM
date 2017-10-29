@@ -15,32 +15,49 @@ and open the template in the editor.
         <script src="jqueryFiles/jquery-3.2.1.min.js"></script>
     </head>
     <body>
-        <div id="but">Mission JOUR NUit</div>
-        <button type="button" id="bouton" >JOUR!</button>
-
-        <h1> JOUR!</h1>
-        <div> au top </div>
-        <ul>
-            <li>moutarde</li>
-            <li>champignons</li>
-            <li>carottes</li>
-        </ul>
-
+        <div id="but">Mission Interrupteur Jour Nuit</div>
+        <p></p>
+        <div><button type="button" id="bouton" >interrupteur éteint</button></div>
+        <div>
+            <h1>extinction du système</h1>
+        </div>
+        <div>  
+            <ul>
+                <!--<li>action</li>-->
+                <!--            <li>action</li>-->
+                <!--<li>action</li>-->
+            </ul>
+        </div>
         <script>
 //<![CDATA[
             $(document).ready(function () {
                 // $('input[name=bouton]')
+                
+             
                 $("#bouton").click(function () {
+//                  debugger; 
+                    $("h1").hide(2000).text(text);
                     $("body").toggleClass("nuit");
                     var text = $("h1").text();
-                    var text2 = $("#button").text();
-                    $("h1").text(text === "JOUR!" ? "NUIT!" : "JOUR!");
-                    $("#button").text(text2 === "JOUR!" ? "NUIT!" : "JOUR!");
+                    
+                    // var text2 = $("#button").text();
+                    $("#bouton").text(text === "NUIT!" ? "interrupteur en position JOUR" : "interrupteur en position NUIT"); //change le nom bouton
+                    $("h1").text(text === "JOUR!" ? "NUIT!" : "JOUR!");//change le titre
+                    // $("#button").text(text2 === "JOUR!" ? "NUIT!" : "JOUR!");
+                     $("h1").show(2000);
+                    $(this).css('background', 'rgb(172, 91, 7').css('color','white');
+                    // var text3 = $("li:last").text();
+                    var indice = $("li:last").index() + 2;
+                    $("ul").append('<li>action ' + indice + '</li>');
                 });
-                $("li").each(function(i, item){//est l'argument index et item, l'item
-                    var text3= $("this").text();
-                    $(this).text(text+" "+i);
-                });
+
+//                $("li").each(function (i) {//est l'argument index et item, l'item
+//                    var text3 = $(this).text();
+//                   
+//                    $(this).css('color','rgb(207, 48, 198)')
+//                  .text(text3 + " " + i);
+//                    $("div :last").appendTo(this);
+//                });
 // Mon code JQuery
             });
 //]]>

@@ -1,0 +1,583 @@
+/*﻿ Changer la couleur d'un des textes 
+ Changer l'alignement d'un des textes 
+ Appliquer une image de fond à la page 
+ Utiliser une police personnalisée via @font-face 
+ Définir une bordure à un élément 
+ Définir une ombre à un élément 
+
+ Feuille de styles CSS 
+
+ /////////////////////////////////////////////////////////// 
+ polices 
+ ////////////////////////////////////////////////////////// 
+ Définition d'une nouvelle police nommée AmaticSC-Regular */
+
+@font-face 
+{  
+    font-family: 'AmaticSC-Regular'; 
+    src: url('../font/AmaticSC-Regular.eot'); 
+    src: url('../font/AmaticSC-Regular.eot?#iefix') format('embedded-opentype'), 
+        url('../font/AmaticSC-Regular.woff') format('woff'), 
+        url('../font/AmaticSC-Regular.ttf') format('truetype'),
+        url('../font/AmaticSC-Regular.svg#AmaticSC-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-size:20px;
+
+} 
+
+
+@font-face
+{
+	font-family: 'cac_champagneregular';
+	src: url('../font/cac_champagne-webfont.eot');
+	src: url('../font/cac_champagne-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../font/cac_champagne-webfont.woff2') format('woff2'),
+	url('../font/cac_champagne-webfont.woff') format('woff'),
+	url('../font/cac_champagne-webfont.ttf') format('truetype'),
+	url('../font/cac_champagne-webfont.svg#cac_champagneregular') format('svg');
+	font-weight: normal; 
+	 font-style: italic; 
+	 font-size:200%; 
+         
+         
+         
+         
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+
+body
+{
+    background-image: url('../images/fond2.png');
+    background-attachment: fixed; /* Le fond restera fixe */
+	width:1000px;
+	margin: auto;
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+
+
+.image/*photo*/
+{
+/* aligne le texte et fait une bordure en blue style:solid */
+/* image-align: right; */
+/* haut, droite, bas, gauche) */
+	display: inline-block;
+	vertical-align:top;
+	
+	position:absolute; 
+	top:20px;  
+	left:835px; 
+	width:130px;
+	height:170px;	
+
+	float:right ;
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	-khtml-border-radius: 4px; 
+	border-radius: 10px 0px 10px 0px; 
+	border:50px rgba(76, 71, 71, 1);
+
+/* margin: 5px 5px 800px 800px; */
+/* box-shadow: 5px 6px 6px grey solid; */
+/* padding-right; */
+/* right :100; */
+/* Background-position: right right; */
+ /* border: 2px blue solid;  */
+ /* border: 5px solid rgba(77,110,131,0.5); */
+ /* /* padding: 2px;  marge intérieure */
+ /* margin:20px; */
+/* border-radius: 20px 0px 10px 4px rgba(76, 71, 71, 0.75); */
+/* border-radius:30px; */
+/* -moz-border-radius:4px; */
+/* -webkit-border-radius: 4px ; */
+
+	/* ombrage */
+	 box-shadow: 10px 10px 10px 5px rgba(76, 71, 71, 0.5);
+	-moz-box-shadow:10px 10px 10px 5px rgba(76, 71, 71, 0.5);
+	-webkit-box-shadow: 10px 10px 10px 5px rgba(76, 71, 71, 0.5);
+
+}
+
+#logo/*image derrière le titre*/
+{
+	display: inline-block;
+	vertical-align:baseline;
+	
+	position: absolute;
+	top:10px; 
+	left:10px; 
+
+	margin-top: 10px;
+	margin-left: 20px;
+
+	height: 150px;
+	width: 800px;
+
+	background-image: url("../images/fond1.jpg");
+	/* behavior:url("../images/fond1.jpg"); */
+	opacity : 0.9;
+	filter:alpha(opacity=90); /*pour IE*/
+
+	border-radius: 40px 0px 40px 0px; 
+	z-index:1;
+	
+	/* ombrage */
+	box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+	-moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+	-webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+}
+
+#text
+{
+	/* float:center; 	 */
+	opacity: 1;
+	text-align: center; /*left, right,, justify, super*/
+	text-indent:10pt;
+	/* color:rgba(6, 1, 1, 1); */
+	z-index:2;
+ }
+
+
+
+h1 /* Utilisation de la police qu'on vient de définir sur les titres */
+{
+	padding-left:10px;
+	font-family: 'AmaticSC-Regular', Arial, serif;
+	font-size: 4em;
+	/* text-align:center; */
+	text-shadow: 4px 4px 0px white;
+	/* color:rgba(36, 31, 31, 0.8); */
+	
+	}
+
+	
+.image2/*image sous le titre*/
+{
+	display: inline-block;
+	vertical-align:baseline;
+	
+	position:absolute; 
+	top:155px;  
+	left:10px; 
+	width:800px;
+	height:10px;	
+
+	border:6px rgba(76, 71, 71, 1);
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	-khtml-border-radius: 4px; 
+	border-radius: 40px 40px 40px 40px; 
+	opacity: 0.9;
+
+	margin:20px;
+
+	/* ombrage */
+	box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+	-moz-box-shadow:10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+	-webkit-box-shadow: 10px 10px 10px 0px rgba(76, 71, 71, 0.5);
+}
+	
+.titre
+{
+	color :rgba(77,110,131,0.8);
+	font-size: 2em;
+	padding-left:10px;
+	/* text-align: center;	 */
+	font-style:normal;	
+	/* background-image: url("../images/fond1.jpg"); */
+
+}
+	
+section
+{
+	display: inline-block;
+	vertical-align:bottom;
+	position:absolute;
+	 top:310px;
+	/* left:20px;  */
+	/* float:bottom; */
+	
+	/* float: left; */
+    width: 950px;
+	height:500px;
+	
+	/* border: 1px solid rgba(79,133,187,1); */
+	
+	padding-left:10px;
+	padding-right:10px;
+	margin-left:10px;
+	margin-top:10px;
+	overflow: auto;/*gére automatiquement les textes trops longs par rapport aux dimensions que l'on imposent*/
+	word-wrap: break-word;/*force la cesure si besoin*/
+	
+	/* border: 2px rgba(79,133,187,1) solid; */
+	/* box-shadow: 10px 2px 2px black solid; */
+	/* border-radius: 10px; */
+}	
+	
+	
+aside
+{
+	
+	display: inline-block;
+	vertical-align:bottom;
+	
+    width: 300px;
+	height:400px;
+	
+	border: 1px solid rgba(79,133,187,1);
+	border: 2px rgba(79,133,187,1) solid;
+	box-shadow: 10px 2px 2px black solid;
+	border-radius: 10px;
+	
+	padding-left:2px;
+	padding-right:2px;
+	margin-left:2px;
+	margin-top:2px;
+	
+	overflow: auto;/*gére automatiquement les textes trops longs par rapport aux dimensions que l'on imposent*/
+	word-wrap: break-word;/*force la cesure si besoin*/
+}	
+	
+h2 /* Utilisation de la police qu'on vient de définir sur les titres */
+{
+	padding-left:10px;
+	color :rgba(79,133,187,1); 
+	font-family: 'cac_champagneregular', Arial, serif;
+	font-size: 2em;
+}	
+ 
+
+.bordureliste
+{
+	/* fait une bordure et de l'ombre sur le block entier */
+	border: 0.5px rgba(79,133,187,0.5) solid;
+	/* to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%) solid; */
+	box-shadow: 10px 2px 2px black solid;
+	border-radius: 10px;
+	display: inline-block;
+	vertical-align:middle;
+	/* baseline :2px; */
+
+	width: 240px;
+	height:240px;
+}
+
+
+nav
+{
+	position:absolute; 
+	top:195px;  
+	left:20px; 
+	float: right; 
+    width: 910px;
+	height:120px;
+	
+	display: inline-block;
+	vertical-align:top;
+    /* border: 1px solid (76, 71, 71, 0.8); */
+	border: 2px rgba(79,133,187,1) solid;
+	padding-left:10px;
+	padding-right:10px;
+	margin-left:10px;
+ 
+	box-shadow: 10px 2px 2px black solid;
+	border-radius: 10px;
+	
+	overflow: auto;/*gére automatiquement les textes trops longs par rapport aux dimensions que l'on imposent*/
+	word-wrap: break-word;/*force la cesure si besoin*/
+}
+
+
+article
+{
+	
+	display: inline-block;
+	vertical-align:bottom;
+	
+    width: 300px;
+	height:400px;
+	
+	border: 1px solid rgba(79,133,187,1);
+	border: 2px rgba(79,133,187,1) solid;
+	box-shadow: 10px 2px 2px black solid;
+	border-radius: 10px;
+	
+	padding-left:2px;
+	padding-right:2px;
+	margin-left:2px;
+	 margin-top:2px;
+	
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////////// */
+/* HOVER */
+/* /////////////////////////////////////////////////////////////////// */
+
+
+
+#logo:hover 
+{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+
+
+
+
+/* :hover au survol de la souris 
+ { 
+  change la couleur du fond	  
+  background-color: #FFCC66;  
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);  
+  en gras  
+ font-weight:bold; 
+}*/
+
+
+
+mark
+{
+    /* /* /* La couleur de fond prend le pas sur celle de toute la page */ 
+    /* /* background-color: red; */ 
+    color: grey;
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////////// */
+/* BIBLIOTHEQUE*/
+/* /////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+#conteneur
+{
+display:flex; /*pemet de mettre les blocs les uns à cotes des autres*/
+	flex-direction:column;	/*pour les remettre en colonne*/
+	flex-direction:row-column;/*pour inverser l'ordre des blocs de la colonne*/
+flex-wrap:wrap;/*s'ajuste automatiquement à la taille de l'ecran si pas assez deplace en largeur alors il mettra les blocs en colonne et non les uns à cotes des autres*/
+display:flex;
+justify-content:	flex-start; /*les blocs sont alignés au début*/
+justify-content:	flex-end;/*les blocs sont alignés à la fin*/
+justify-content:	center;/*les blocs sont centrés*/
+justify-content:	space-between;	/*les blocs sont justifiés sur toute la largeur mais laisse des espaces entre les blocs */
+justify-content:	space-around;	/*les blocs sont justifiés sur toute la largeur mais laisse des espaces entre les blocs et sur les bords*/
+
+/* Alignement « géométrique » */
+justify-content: center;     /* Éléments groupés au centre */
+justify-content: start;      /* Éléments groupés au début */
+justify-content: end;        /* Éléments groupés à la fin */
+justify-content: flex-start; /* Éléments flexibles groupés au début */
+justify-content: flex-end;   /* Éléments flexibles groupés à la fin */
+justify-content: left;       /* Éléments groupés à gauche */
+justify-content: right;      /* Éléments groupés à droite */
+
+/* Alignement par rapport à la ligne de base */
+justify-content: baseline;
+justify-content: first baseline;
+justify-content: last baseline;
+
+/* Alignement distribué */
+justify-content: space-between; /* Les éléments sont répartis équitablement
+                                   Le bord du premier est aligné sur le 
+                                   début du conteneur et la fin du dernier
+                                   est alignée sur la fin du conteneur */
+justify-content: space-around;  /* Les éléments sont répartis équitablement
+                                   À chaque extrémité, entre le bord du 
+                                   conteneur et le premier/dernier élément
+                                   on a la moitié de l'espace appliqué entre
+                                   chaque élément */
+justify-content: space-evenly;  /* Les éléments sont répartis équitablement
+                                   Tous les éléments sont séparés par le même
+                                   espace */
+justify-content: stretch;       /* Les élémnts sont répartis équitablement et 
+                                   les éléments dimensionnés avec 'auto' sont
+                                   étirés afin de remplir le conteneur */
+
+/* Alignement pour le dépassement */
+justify-content: safe center;
+justify-content: unsafe center;
+
+/* Valeurs globales */
+justify-content: inherit;
+justify-content: initial;
+justify-content: unset;
+
+
+/*pour le moment l'alignement se faisiait sur l'axe principal (ici horizontal), on peut aussi le faire sur un axe secondaire*/
+height:200px;/*ici on définit l'axe secondaire, celui du bas*/
+
+/* Mots-clés de base */ 
+align-items: normal; 
+align-items: stretch; 
+
+/* Alignement géométrique */ 
+align-items: center; /* Les éléments sont regroupés au centre */ 
+align-items: start;  /* Les éléments sont regroupés au début */ 
+align-items: end;    /* Les éléments sont regroupés à la fin */ 
+align-items: flex-start; /* Les éléments flexibles sont regroupés au début */ 
+align-items: flex-end;   /* Les éléments flexibles sont regroupés à la fin */ 
+align-items: self-start; 
+align-items: self-end; 
+align-items: left;  /* Les éléments flexibles sont regroupés à gauche */ 
+align-items: right; /* Les éléments flexibles sont regroupés à droite */ 
+
+/* Alignement par rapport à la ligne de base */
+align-items: first baseline; 
+align-items: last baseline;
+
+/* Gestion du dépassement */ 
+align-items: safe center; 
+align-items: unsafe center; 
+
+/* Valeurs globales */ 
+align-items: inherit; 
+align-items: initial; 
+align-items: unset;
+margin:auto; /*dans chacun des blocs*/
+
+/* On peut changer l'ordre des blocs avec un order tous les blocs */
+order:3;
+/* rajouter :nth-child(numero de l'element à choisir dans le code) */
+
+.bloc1
+{
+	width:150px;
+	weight:150px;
+}
+
+.bloc1:nth-child(1)
+{
+	background-color:white;
+	order:1;
+	flex:1;  /*permet de faire grossir ou maigrir un element, avec 1 il prendra tout l'espace restant si un 2eme element à flex2 il prendra 2 fois plus de place que le premier*/
+}
+.bloc1:nth-child(2)
+{
+	background-color:green;
+}
+.bloc1:nth-child(3)
+{
+	background-color:blue;
+}
+
+
+
+justify-content:	flex-star;	
+
+
+
+	}
+
+
+
+/*https://developer.mozilla.org/fr/docs/Web/CSS/align-items*/
+/* h1 */
+/* { */
+	
+/* pour rajouter des bordures identiques*/
+/* border: 3px blue solid; */
+
+/* pour rajouter des bordures differentes*/
+
+/* border-left: 2px solid black; */
+/* border-right: 2px solid black; */
+
+
+/* forme de l'arrondi des coins */
+/* border-radius: 10px; */
+/* forme de l'arrondi des coins */
+/* border-radius: 10px 5px 10px 5px; */
+/* forme d'arrondi eliptique des coins */	
+/* border-radius: 20px / 10px; */
+
+/* ombre directement sur les lettres du texte */
+/* text-shadow: 25px 2px 4px grey; */
+/* ombre placée à l'interieur du bloc du texte 	 */
+/* box-shadow: 6px 6px 6px black inset; */
+
+/* applique la couleur rouge  */
+/* color:black; */
+/* (to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 55%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); */
+	
+	
+/* double la taille dela police et centre le texte */
+/* font-size: 2em; */
+/* text-align:center; */
+
+/* } */
+
+/* * font-family: serif - sans-serif - monospace - cursive - fantasy */
+						/* * Verdana - Times - Helvetica - Arial - Arial Nerrow - ... */
+
+/* * font-style: 	 normal - italic - oblique */
+
+/* * font-variant:  normal - small-caps */
+
+/* * font-weight:   100 - 200 - 300 - 400 - 500 - 600 - 700 - 800 - 900 */
+							/* * Normal - bold - bolder - lighter */
+
+/* * font-size:  30pt - 30px - 1cm - 200% */
+						/* * xx-large - x-large - large - medium - small - x-small - xx-small */
+						/* * larger - smaller */
+
+/* * font: Cette propriété permet de définir en une seule fois toutes les propriétés de font. */
+
+/* * font:15px/18px Times bold italique */
+/* * font:Arial, Verdana 100%/120% italique */
+
+/* * text-decoration: none, underline */
+
+/* * text-transform: uppercase, lowercase, capitalize */
+
+/* * text-align:left, right, center, justify, super */
+
+/* * text-indent:10%, 10pt */
+
+
+/* Le positionnement inline-block */
+
+/* display:inline-block; */
+/* Les manipulations que demande le positionnement flottant se révèlent parfois un peu délicates sur des sites complexes.  */
+/* Dès qu'il y a un peu plus qu'un simple menu à mettre en page,  */
+/* on risque d'avoir à recourir à des clear: both; qui complexifient rapidement le code de la page. */
+
+/* Une meilleure technique consiste à transformer vos éléments en inline-block avec la propriété display. */
+
+/* Quelques petits rappels sur les éléments de type inline-block : */
+
+/* •Ils se positionnent les uns à côté des autres  */
+/* (exactement ce qu'on veut pour placer notre menu et le corps de notre page !). */
+
+/* •On peut leur donner des dimensions précises  */
+/* (là encore, exactement ce qu'on veut !). */
+
+/* Nous allons transformer en inline-block les deux éléments que nous voulons placer côte à côte : le menu de navigation et la section du centre de la page. */
+/* css */
+/* nav */
+/* {  */
+/* display: inline-block; */
+/* width: 150px; */
+/* border: 1px solid black; */
+/* } */
+
+/* vertical-align: */
+/* Cette propriété permet de modifier l'alignement vertical des éléments.  */
+/* Voici quelques-unes des valeurs possibles pour cette propriété : */
+
+/* baseline : aligne de la base de l'élément avec celle de l'élément parent (par défaut) ; */
+/* top : aligne en haut ; */
+/* middle : centre verticalement ; */
+/* bottom : aligne en bas ; */
+/* (valeur en px ou %) : aligne à une certaine distance de la ligne de base (baseline). */

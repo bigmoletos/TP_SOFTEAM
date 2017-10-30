@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/css3.css"  type="text/css" charset="utf_8"/>
+        <link rel="stylesheet" href="style/todoliste1.css"  type="text/css" charset="utf_8"/>
         <script src="jqueryFiles/jquery-3.2.1.min.js"></script>
         <style>
             h1{text-align: center;}
@@ -48,7 +48,7 @@ and open the template in the editor.
                         $('#bouton').click(
                                 function () {
                                     var toAdd = $('input[name=ajout]').val();
-                                    $("ul").append('<li><input type="checkbox">' + toAdd + '<button type="button" id="sup" >x</button></li>');
+                                    $("ul").append('<li><input type="checkbox" id="check">' + toAdd + '<button type="button" id="sup" >x</button></li>');
                                 });
 //                        $("input[name=ajout]").click(function (event) {
 //                          //  if (event.keyCode === 13) {
@@ -62,8 +62,8 @@ and open the template in the editor.
                             }
                         });
                         //pour barrer le texte
-                        $(document).on('click', 'li', function () {
-                            $(this).toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
+                        $(document).on('click', '#check', function () {
+                            $(this).parent().toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
                         });
                         //pour supprimer la tache
                          $(document).on('click', '#sup', function () {
@@ -75,7 +75,7 @@ and open the template in the editor.
                             $(this).val('');
                         });
 
-                        //     $('ul').sortable();
+                        $('ul').sortable();
 
                     }
             );

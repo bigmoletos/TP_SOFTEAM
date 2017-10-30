@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/todoliste2.css"  type="text/css" charset="utf_8"/>
+        <script src="jqueryFiles/jquery-3.2.1.min.js"></script>
+        <script src="jqueryFiles/jquery-ui-1.12.1.js/jquery-ui.css"></script>
+        <style>
+            h1{text-align: center;}
+            ul, li{padding:0;}
+            ul{list-style-type: none;}
+            li{border: 1px black solid; margin: 0 auto 10px; max-width: 400px;}
+        </style>
+    </head>
+    <body>
+        <h1>TODO LIST</h1>
+        <form name="todo">
+            <ul >
+                <!--                <li><input type="checkbox">Acheter du pain</li>
+                                <li><input type="checkbox">Acheter du vin</li>-->
+            </ul>
+            <!--<button type="button" id="bouton" >+</button>-->
+        </form>
+
+
+        <script>
+
+//            $(document).ready(function () {
+//                //  $("input[name=todo]").
+//                //  $("h1").siblings().each(function () {
+//                $("ul").append('<li><input type="text" id="ajout">Ajouter une nouvelle tache<button type="button" id="bouton" >+</button></li>');
+//                $("#ajout").bind("click", function () {
+//
+//                });//fin bind
+//
+//            });//fin de $(document).ready
+
+
+            $(document).ready(
+                    function () {
+                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="Nouvelle Tache"><button type="button" id="bouton" >+</button>');
+                        $('#bouton').click(function () {
+                            var toAdd = $('input[name=ajout]').val();
+                            $("ul").append('<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><input type="checkbox" id="check">' + toAdd + '<button type="button" id="sup" >x</button></li>');
+                        });
+            //sortable drag and drop
+                $('ul').focus(function () {
+                    $(this).val('');
+                });
+                $('ul').sortable();
+            });
+
+            //limte le nbre de taches
+            $("input[name=ajout]").click(function (event) {
+                //  if (event.keyCode === 13) {
+                $("#bouton").keyup(); //avec .click ne fonctionne pas ici                          // }
+            });
+            //pour un effet clip à l'ajout avec un hide avant
+            $("#bouton").click(function () {
+                $("li:last").hide(1); //.fadeOut('slow'); 
+                $("li:last").toggle('clip');
+            });
+            $("#ajout").click(function (event) {
+                if (event.keyCode === 10) {//limitation à 10 taches
+                    $("#bouton").keyup(); //avec .click ne fonctionne pas ici
+                }
+            });
+//                        //pour barrer le texte
+//                        $(document).on('click', '#check', function () {
+//                            $(this).parent().toggleClass(
+//                                    );//.fadeOut('slow'); //pour supprimer totalement la ligne
+//                        });
+
+            //pour barrer le texte avec un crayon
+            $(document).on('click', '#check', function () {
+                $(this).parent().toggleClass('strike'); //.fadeOut('slow'); //pour supprimer totalement la ligne
+            });
+            //pour supprimer la tache
+            $(document).on('click', '#sup', function () {
+                $(this).parent().fadeOut('slow');
+            });
+            //pour vider la zone de texte
+
+            $('li').focus(function () {
+                $(this).val('');
+            });
+
+            //mettre les taches de travers
+
+            $('ul').dropdown({
+                gutter: 5,
+                delay: 100,
+                random: true});
+
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+</html>

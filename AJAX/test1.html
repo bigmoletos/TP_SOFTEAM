@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>   
+
+        <script> //script pour AJAX  
+            function getXMLHttpRequest() {
+                var xhr = null;
+                if (window.XMLHttpRequest || window.ActiveXObject) {
+                    if (window.ActiveXObject) {
+                        try {
+                            xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                        } catch (e) {
+                            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                    } else {
+                        xhr = new XMLHttpRequest();
+                    }
+                } else {
+                    alert("Navigateur incompatible avec XMLHTTPRequest");
+                    return null;
+                }
+                return xhr;
+            }
+
+        </script> 
+        
+        <script>
+          xhr.onreadystatechange=funcion(){
+              //instructions
+          };  
+           xhr.open("GET", "page.php", true) ;
+           
+        </script>
+
+
+
+
+    </body>
+</html>

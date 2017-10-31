@@ -21,7 +21,7 @@ and open the template in the editor.
 
         <section class="row">
             <div class="col-md-2" id="photocontainer"><div id="photo"></div></div>
-            <div class="col-md-5" id="titre">
+            <div class="col-md-6" id="titre">
                 <h1>Franck Desmedt</h1> 
                 <p></p>
                 <h2> Développeur Web technico-fonctionnel </h2>
@@ -32,7 +32,7 @@ and open the template in the editor.
             </div>  
 
 
-            <div class="col-md-4" id="contact">     <h2>Contactez-moi</h2>
+            <div class="col-md-4 " id="contact">     <h2>Contactez-moi</h2>
                 <p>  Marié, 2 enfants </p>                                 
 
                 <a href="tel:+33663748518"><i class="fa fa-phone-square fa-2x" aria-hidden="true"></i> </a> 06 63 74 85 17  
@@ -197,5 +197,54 @@ and open the template in the editor.
             </div>
         </section> 
 
+         <script>
+                            $(document).ready(
+                                    function () {
+//                                        $("form :first").append('<input type="text" name="ajout" id="ajout" placeholder="Nouvelle Tache"><button type="button" id="bouton" >+</button>');
+//                                        $('#bouton').click(
+//                                                function () {
+//                                                    var toAdd = $('input[name=ajout]').val();
+//                                                    $("#liste").append('<li><input id="check"  type="checkbox">' + toAdd + '<button type="button" id="sup" >x</button></li>');
+//                                                });
+//                                                                $("input[name=ajout]").click(function (event) {
+//                                                                  //  if (event.keyCode === 13) {
+//                                                                        $("#bouton").keyup();//avec .click ne fonctionne pas ici
+//                                                                   // }
+//                                                                });
+//
+//                                        $("#ajout").click(function (event) {
+//                                            if (event.keyCode === 10) {//limitation à 10 taches
+//                                                $("#bouton").keyup();//avec .click ne fonctionne pas ici
+//                                            }
+//                                        });
+//                                        //pour barrer le texte
+//                                        $(document).on('click', '#check', function () {
+//                                            $(this).toggleClass('strike');//.fadeOut('slow'); //pour supprimer totalement la ligne
+//                                        });
+//                                        //pour supprimer la tache
+//                                        $(document).on('click', '#sup', function () {
+//                                            $(this).parent().fadeOut('slow');
+//                                        });
+//
+//                                        //pour vider la zone de texte
+//                                        $('input').focus(function () {
+//                                            $(this).val('');
+//                                        });
+//                                        $("h1, h2, h3").bind("click", function () {
+//                                            $(this).fadeOut('slow');
+//                                        });
+//
+//                                        $(document).bind("click", function () { $("li").animate({background: " #28a565", border: "15px", borderleftcolor: " #28a565"}, {queue: false, duration: 3000});
+//                                                $("h1, h2, a").animate({
+//                                            width: "600px", background: "#dfdfee", opacity: 0.2, height: "20px" }, 6000);
+//                                    });
+       
+                                    //zoom sur un bloc au survol de la souris
+       
+                                    });//fin document ready
+
+                        </script>
+        
+        
     </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>idem page1 mais version Ajax encore plus courte</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="style/todoliste1.css"  type="text/css" charset="utf_8"/>-->
+        <!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+        <script  src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src=" https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" ></script>
+
+    </head>
+    <body>
+
+        <p style="border:1px solid blue">Bonjour</p>
+        <button id="disp"> disparaitre </button>
+        <button id = "ap"> apparaitre </button>
+        <button id = "des"> desactiver </button>
+        <!--<script src="jquery.js"></script>-->
+        <script>
+
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                $("#disp").click(function () {
+                    $("p").hide();
+                });
+
+
+                $("#ap").click(function () {
+                    $("p").show();
+                });
+                //Inverser l"animation (Disparaitre ou apparaitre) d"un el  ́ ement paragraphe
+                $("#disp,#ap").click(function () {
+                    $("p").toggle();
+                });
+                //Disparaitre un paragraphe en indiquant le temps de l"animation en millisecondes
+                $("#disp").click(function () {
+                    $("p").hide(1000);
+                });
+                //Disparaitre un paragraphe en utilisant les constantes fast (200ms) et slow (600ms)
+                $("#ap").click(function () {
+                    $("p").hide("slow");
+                });
+                //Disparaitre un paragraphe en modifiant progressivement son opacite ́
+                $("#disp").click(function () {
+                    $("p").fadeIn(500);
+                });
+                //Apparaitre un paragraphe en modifiant progressivement son opacite ́
+                $("#ap").click(function () {
+                    $("p").fadeOut(800);
+                });
+                //Replier un paragraphe
+                $("#disp").click(function () {
+                    $("p").slideUp("slow");
+                });
+
+                //  Deplier un paragraphe  ́
+                $("#ap").click(function () {
+                    $("p").slideDown("fast");
+                });
+//Faire apparaitre le paragraphe une fois la disparition terminee ́
+                $("#disp").click(function () {
+                    $("p").hide("slow", function () {
+                        $("p").show("slow");
+                    });
+
+                });
+
+//Faire apparaitre le paragraphe apres un d ` elai de la disparition  ́
+                $("#disp").click(function () {
+                    $("p").hide("slow").delay(2000).show("slow");
+                });
+                //Desactiver les animations  ́
+                $("#des").click(function () {
+                    jQuery.fx.off = true;
+                });
+
+
+//Definir notre propre animation  ́
+                $("#disp").click(function () {
+                    $("p").animate({width: "50%", opacity: 0.5},
+                            1000);
+                });
+
+
+                //  Enchainer des animations personnalisees  ́
+                $("#disp").click(function () {
+                    $("p").animate({width: "20%"}, {queue: false,
+                        duration: 2000})
+                            .animate({opacity: 0.5}, 2000);
+
+                });
+
+                //  Rep ́ eter les animations  ́
+                //     Exemple
+                $(function () {
+                    function repeatAnimate() {
+                        $("p").animate({width: "20%"})
+                                .animate({opacity: 0.2}, 2000)
+                                .animate({width: "100%"})
+//                                 .animate.css("color", "red")
+                                .animate({opacity: 1}, 2000, repeatAnimate);
+
+                    }
+                    ;//fin repeat animate
+                    repeatAnimate();
+                });
+
+              //  Arreter les animations ˆ
+               // Exemple
+// Stopper l"animation courante :
+                $("p:animated").stop();
+                $("p:animated").stop(false);
+                $("p:animated").stop(false, false);
+// Stopper l"animation courante et les animations suivantes :
+                $("p:animated").stop(true);
+                $("p:animated").stop(true, false);
+// Stopper l"animation courante et la fait aller a son etat final.
+                  $("p:animated").stop(false, true);
+// Stopper toutes les animations suivantes, mais laisse l"animation courante aller a son etat final.
+                $("p:animated").stop(true, true);
+
+            }); //fin document ready
+        </script>
+
+    </body>
+</html>
